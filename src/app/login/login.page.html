@@ -1,0 +1,41 @@
+
+<body >
+<container-top>
+  <div class="logo" >
+    <img src="/assets/imgs/carecenterlogo.png">
+  </div>
+
+  <div class="login-container">
+    <form [formGroup]="formGroup">
+      <span><center>Login</center></span>
+      <ion-item class="ion-margin-top" lines="none">
+        <ion-input type="email" placeholder="E-mail"  formControlName="username" ></ion-input>
+      </ion-item>
+
+ 
+      <ion-item class="ion-margin-top" lines="none">
+        <ion-input type="password" placeholder="Senha"  formControlName="password" ></ion-input>
+      </ion-item>
+  
+      <ion-button class="login" (click)="autenticar()" size="small" color="success" shape="round" fill="solid">
+        Entrar
+      </ion-button>
+
+      <ion-button class="login" (click)="trocartela()" size="small" color="dark" shape="round" fill="clear">
+        Seja um novo usuário.
+      </ion-button>
+
+  </form>
+  </div>
+</container-top>
+</body>
+
+
+
+
+
+
+
+
+
+ 

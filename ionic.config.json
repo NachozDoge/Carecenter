@@ -1,0 +1,7 @@
+{
+  "name": "CareCenter",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
