@@ -26,6 +26,14 @@ const routes: Routes = [
     path: 'cadastro-perfil',
     loadChildren: () => import('./cadastro-perfil/cadastro-perfil.module').then( m => m.CadastroPerfilPageModule)
   },
+  {
+    path: 'ficha-medica',
+    loadChildren: () => import('./ficha-medica/ficha-medica.module').then( m => m.FichaMedicaPageModule)
+  },
+  {
+    path: 'redefinir-senha',
+    loadChildren: () => import('./redefinir-senha/redefinir-senha.module').then( m => m.RedefinirSenhaPageModule)
+  }
   
 ];
 
