@@ -4,9 +4,8 @@ body{
 }
 .logo{
 
-   
+    margin: 0px auto;
     height: 50%;
-    margin-left: 35% auto;
 
 }
 
@@ -19,33 +18,29 @@ ion-button{
     margin-top: 5%;
     width: 50%;
     border-radius: 80px;
-    margin-left: 23%;
-
+    margin-left: 27%;
+    font-weight:bold;
 }
-.NovoUsuario{
-    margin-top: 5%;
+.login2{
     width: 50%;
     border-radius: 80px;
-    margin-left: 22%;
-}
-.Redefinir{
-    margin-top: 5%;
-    width: 30%;
-    margin-left: 32%;
-    margin-top: -3px;
-    margin-bottom: -10px;
-  
-    
+    margin-left: 27%;
+    font-weight:bold;
 }
 .cadastro{
     width: 350px;
     border-radius: 80px;
     margin-left: 10%;
 }
-
+.senhaesq{
+    font-size: 80%;
+    margin-left: 31%;
+}
 .ion-margin-top{
     border-radius: 80px;
-    width: 70%;
-    margin: 0 auto;
-    margin-top:5px;
+    width: 350px;
+    margin-left: 10%;
+}
+.login-container{
+    margin-top: 10%;
 }

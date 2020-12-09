@@ -1,6 +1,3 @@
-
- 
-
 <ion-content color="primary" >
 
   <div class="logo" >
@@ -8,28 +5,26 @@
   </div>
 
   <form [formGroup]="formGroup">
-    <ion-item class="ion-margin-top">
- 
-  <ion-input type="text"   placeholder="Email" formControlName="username"></ion-input>
-  </ion-item>
- 
-  <ion-item class="ion-margin-top">
-  
-  <ion-input  type="password"  placeholder="Senha" formControlName="password"></ion-input>
- 
-</ion-item >
 
-<ion-button  class="Redefinir" (click)="RedefinirSenha()" size="small" color="dark" shape="round" fill="clear">
+    <ion-item class="ion-margin-top">
+      <ion-input type="text" placeholder="Email" formControlName="username"></ion-input>
+    </ion-item>
+ 
+    <ion-item class="ion-margin-top">
+      <ion-input type="password" placeholder="Senha" formControlName="password"></ion-input>
+    </ion-item >
+
+<ion-button class="Redefinir" (click)="RedefinirSenha()" size="small" color="dark" shape="round" fill="clear">
   Redefinir Senha.
 </ion-button>
 
-<ion-button class="login" (click)="autenticar()" expand="full" size="small" color="success" shape="round" fill="solid">Login</ion-button>
+<ion-button class="login" (click)="autenticar()" size="medium" color="warning" shape="round" fill="solid">
+  Entrar
+</ion-button>
 
-  
-
-  <ion-button  class="NovoUsuario" (click)="CriarConta()" size="small" color="dark" shape="round" fill="clear">
-    Seja um novo usuário.
-  </ion-button>
+<ion-button class="login2" (click)="CriarConta()" size="small" color="dark" shape="round" fill="clear">
+  Seja um novo usuário.
+</ion-button>
   
   </form>
- </ion-content>
+</ion-content>
