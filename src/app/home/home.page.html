@@ -18,23 +18,24 @@
       </ion-avatar>
   </div>
  
- <div class="cards">
-  <ion-card button (click)="buttonClick()">
-    <ion-card-header >
-      <ion-card-title>Ficha médica</ion-card-title>
-      <ion-card-subtitle>Anderson Souza</ion-card-subtitle>
+  <div class="cards">
+    <ion-card  [routerLink]="['/ficha-medica']" >
+      
+      <ion-card-header >
+        <ion-card-title>Ficha médica</ion-card-title>
+        <ion-card-subtitle>Anderson Souza</ion-card-subtitle>
+      
+      </ion-card-header>
     
-    </ion-card-header>
+      <ion-card-content>
+       Nome: Anderson.
+       Sobrenome:Souza.
+       Idade: 20anos.
+       Cidade: Seropedica.
+       Estado: Rio de janeiro.
   
-    <ion-card-content>
-     Nome: Anderson.
-     Sobrenome:Souza.
-     Idade: 20anos.
-     Cidade: Seropedica.
-     Estado: Rio de janeiro.
-
-    </ion-card-content>
-  </ion-card>
+      </ion-card-content>
+    </ion-card>
 
   <ion-card button (click)="buttonClick()">
     <ion-card-header>
