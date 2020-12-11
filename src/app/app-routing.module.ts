@@ -33,6 +33,14 @@ const routes: Routes = [
   {
     path: 'redefinir-senha',
     loadChildren: () => import('./redefinir-senha/redefinir-senha.module').then( m => m.RedefinirSenhaPageModule)
+  },
+  {
+    path: 'agendar-exame',
+    loadChildren: () => import('./agendar-exame/agendar-exame.module').then( m => m.AgendarExamePageModule)
+  },
+  {
+    path: 'marcar-consulta',
+    loadChildren: () => import('./marcar-consulta/marcar-consulta.module').then( m => m.MarcarConsultaPageModule)
   }
   
 ];

@@ -1,0 +1,47 @@
+<ion-header >
+  <ion-toolbar >
+    <ion-title> 
+      <img src="/assets/imgs/carecenterlogo.png" >
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    
+   
+  </ion-toolbar>
+</ion-header>
+<ion-content color='primary'> 
+    <div class="ion-left"></div>
+  
+  <ion-card>
+    <ion-card-header>
+      <center><ion-card-subtitle>Marcar Consulta</ion-card-subtitle></center>
+
+    </ion-card-header>
+    <ion-card-content>
+      Especialista: 
+      <ion-select placeholder="Escolha aqui">
+        <ion-select-option value="p">Psicólogo</ion-select-option>
+        <ion-select-option value="f">Fisioterapeuta</ion-select-option>
+        <ion-select-option value="o">Orrinolaringologista</ion-select-option>
+      </ion-select>
+    </ion-card-content>
+    <ion-card-content>
+      Cidade: 
+      <ion-select placeholder="Escolha aqui">
+        <ion-select-option value="p">Três Rios</ion-select-option>
+        <ion-select-option value="f">Seropédica</ion-select-option>
+      </ion-select>
+    </ion-card-content>
+    <ion-card-content>
+      Metódo: 
+      <ion-select placeholder="Escolha aqui">
+        <ion-select-option value="p">No Celular</ion-select-option>
+        <ion-select-option value="f">No local</ion-select-option>
+      </ion-select>
+    </ion-card-content>
+  </ion-card>
+<div class="nada"></div>
+<ion-button class="btnProsseguir" shape="round" size="small" color="dark" expand="block" (click)="openstate()">
+  Buscar
+</ion-button>
