@@ -11,8 +11,6 @@ export class FichaMedicaPage {
   constructor() {
     this.items = [
       { expanded: false },
-      { expanded: false },
-      { expanded: false },
       { expanded: false }
     ];
   }

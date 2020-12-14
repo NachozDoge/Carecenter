@@ -41,6 +41,22 @@ const routes: Routes = [
   {
     path: 'marcar-consulta',
     loadChildren: () => import('./marcar-consulta/marcar-consulta.module').then( m => m.MarcarConsultaPageModule)
+  },
+  {
+    path: 'laudos-medicos',
+    loadChildren: () => import('./laudos-medicos/laudos-medicos.module').then( m => m.LaudosMedicosPageModule)
+  },
+  {
+    path: 'assinaturas',
+    loadChildren: () => import('./assinaturas/assinaturas.module').then( m => m.AssinaturasPageModule)
+  },
+  {
+    path: 'exames-marcados',
+    loadChildren: () => import('./exames-marcados/exames-marcados.module').then( m => m.ExamesMarcadosPageModule)
+  },
+  {
+    path: 'consultas-marcadas',
+    loadChildren: () => import('./consultas-marcadas/consultas-marcadas.module').then( m => m.ConsultasMarcadasPageModule)
   }
   
 ];

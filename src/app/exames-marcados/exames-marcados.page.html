@@ -1,0 +1,123 @@
+<ion-header >
+  <ion-toolbar >
+    <ion-title> 
+      <img src="/assets/imgs/carecenterlogo.png" >
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color='primary'>
+
+  <div class="page-title">
+    <center>Exames</center>
+  </div>
+
+  <div class="background-card">
+  <ion-card> 
+    
+    <ion-card-content>
+        <div class="title">
+          <center>Pendentes</center>
+        </div>
+        <div class="line"></div>
+
+<!-- 1st item-->
+        <div class="card-content">
+
+          <div class="left-content">
+            Teste de Covid
+          </div>
+          
+          <div class="right-content">
+            <p style="display:inline;float:left;margin-top:15%;font-weight: bold;">Em 2 dias</p>
+            <ion-icon name="time-outline" style="font-size: 160%;margin-top: 10%;"></ion-icon>
+          </div>
+          
+        </div>
+
+        <div class="line"></div>
+
+<!-- 2nd item-->
+        <div class="card-content">
+
+          <div class="left-content">
+            Ultrasom
+          </div>
+
+          <div class="right-content">
+            <p style="display:inline;float:left;margin-top:15%;font-weight: bold;">Em 5 dias</p>
+            <ion-icon name="time-outline" style="font-size: 160%;margin-top: 10%;"></ion-icon>
+          </div>
+          
+        </div>
+        <div class="line"></div>
+
+<!-- 3rd item-->
+          <div class="card-content">
+
+          <div class="left-content">
+            Exame de vista
+          </div>
+          
+          <div class="right-content">
+            <p style="display:inline;float:left;margin-top:15%;font-weight: bold;">Em 11 dias</p>
+            <ion-icon name="time-outline" style="font-size: 160%;margin-top: 10%;"></ion-icon>
+          </div>
+          
+        </div>
+
+        <div class="line"></div>
+
+    </ion-card-content>
+  </ion-card>
+
+</div>
+
+
+<div class="background-card">
+  <ion-card> 
+    
+    <ion-card-content>
+        <div class="title">
+          <center>Anteriores</center>
+        </div>
+        <div class="line"></div>
+
+<!-- 1st item-->
+        <div class="card-content">
+
+          <div class="left-content">
+            RaioX
+          </div>
+
+          <div class="right-content" button (click)="buttonClick()">
+            <p style="display:inline;float:left;margin-top:20%;font-weight: bold;">Baixar‏‏‎ ‎‏‏‎ ‎</p>
+            <ion-icon name="cloud-download" style="font-size: 160%;margin-top: 15%;"></ion-icon>
+          </div>
+          
+        </div>
+        <div class="line"></div>
+
+<!-- 2nd item-->
+        <div class="card-content">
+
+          <div class="left-content">
+            Exame de sangue
+          </div>
+
+          <div class="right-content" button (click)="buttonClick()">
+            <p style="display:inline;float:left;margin-top:20%;font-weight: bold;">Baixar‏‏‎ ‎‏‏‎ ‎</p>
+            <ion-icon name="cloud-download" style="font-size: 160%;margin-top: 15%;"></ion-icon>
+          </div>
+          
+        </div>
+        <div class="line"></div>
+
+    </ion-card-content>
+  </ion-card>
+</div>
+
+</ion-content>
