@@ -4,22 +4,25 @@
 
 <ion-content color="primary">
 
-  <div class="logo">
+  <div class="logo" >
     <img src="/assets/imgs/carecenterlogo.png">
   </div>
 
   <ion-item>
-    <ion-input placeholder="Email"></ion-input>
+
+    <ion-input type="text"  placeholder="Email" #username></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-input placeholder="Senha" type="senha"></ion-input>
+
+    <ion-input  type="password" placeholder="Senha" #password></ion-input>
   </ion-item>
-  
+
     <div class="separador">
     </div>
-   <ion-button class="btnini2" shape="round" size="small" color="dark" expand="block" (click)="openstate()">
+   <ion-button class="btnini2" shape="round" size="small" color="dark" expand="block" (click)="cadastro()">
     Cadastrar
    </ion-button>
+
 
 </ion-content>

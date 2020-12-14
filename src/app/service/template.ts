@@ -19,9 +19,9 @@ import { AlertController, LoadingController } from '@ionic/angular';
           myAlert(texto){
             let alert = this.alertCtrl.create({
               cssClass: 'my-custom-class',
-              header: 'Desculpe',
+              header: 'Mensagem',
               subHeader: '',
-              message: 'Usuário Inválido!',
+              message: 'Cadastrado com sucesso',
               buttons: ['OK']
             });
             alert.then(data=>{
