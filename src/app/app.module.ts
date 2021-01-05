@@ -43,4 +43,6 @@ export class AppModule {
   private fichamedica() {
     this.router.navigateByUrl('/ficha-medica');
    }
+
+   
 }

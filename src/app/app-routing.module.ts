@@ -57,7 +57,11 @@ const routes: Routes = [
   {
     path: 'consultas-marcadas',
     loadChildren: () => import('./consultas-marcadas/consultas-marcadas.module').then( m => m.ConsultasMarcadasPageModule)
+  },  {
+    path: 'sair',
+    loadChildren: () => import('./sair/sair.module').then( m => m.SairPageModule)
   }
+
   
 ];
 

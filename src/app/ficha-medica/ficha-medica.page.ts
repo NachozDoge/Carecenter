@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { MenuController } from "@ionic/angular";
 
 @Component({
   selector: "app-home",
@@ -8,7 +9,8 @@ import { Component } from "@angular/core";
 export class FichaMedicaPage {
   public items: any = []; 
 
-  constructor() {
+  constructor(private menuCtrl : MenuController,) {
+    
     this.items = [
       { expanded: false },
       { expanded: false }
@@ -28,5 +30,9 @@ export class FichaMedicaPage {
         return listItem;
       });
     }
+  }
+
+  ionViewWillEnter() {
+    this.menuCtrl.enable(true);
   }
 }

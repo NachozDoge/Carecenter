@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-consultas-marcadas',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsultasMarcadasPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private menuCtrl : MenuController
+  ) { }
 
   ngOnInit() {
+  }
+
+  ionViewWillEnter() {
+    this.menuCtrl.enable(true);
   }
 
 }

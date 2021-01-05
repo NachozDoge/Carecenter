@@ -1,7 +1,7 @@
 <ion-app>
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">
-      <ion-content routerLink="home">
+      <ion-content >
         <div class="menu-header-bg"></div>
         <div class="header-content" >
           <img src="/assets/imgs/carecenterlogo.png" alt="">
@@ -10,7 +10,7 @@
           </ion-label>
         </div>
       
-        
+
         <ion-list class="menu-itens">
           <ion-menu-toggle>
           <ion-item routerLink="marcar-consulta">
@@ -61,6 +61,14 @@
          </ion-item>
         
        </ion-menu-toggle>
+
+       <ion-menu-toggle>
+        <ion-item routerLink="sair">
+           <ion-icon name="log-out-outline" slot="start"></ion-icon>
+           <ion-label>Sair</ion-label>
+        </ion-item>
+       
+      </ion-menu-toggle>
           
         </ion-list>
       
