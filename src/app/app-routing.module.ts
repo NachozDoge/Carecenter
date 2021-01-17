@@ -64,6 +64,10 @@ const routes: Routes = [
   {
     path: 'consultas',
     loadChildren: () => import('./consultas/consultas.module').then( m => m.ConsultasPageModule)
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
   }
 
   
