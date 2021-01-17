@@ -1,7 +1,10 @@
-
+<ion-menu-button></ion-menu-button>
 <body>
-  <ion-content>
   
+    <ion-content color="primary" >
+      <ion-button type="button"  value="voltar" onClick="history.go(-1)" class="login" size="medium" color="warning" shape="round" fill="solid">
+        Voltar
+      </ion-button>
     <div class="logo" >
       <img src="/assets/imgs/carecenterlogo.png" style="width:70%;margin-left:16%;margin-top:10%;">
     </div>
@@ -10,14 +13,16 @@
       <form class="form">
 
         <ion-item class="ion-margin-top" lines="none">
-          <ion-input type="password" placeholder="Senha"   ></ion-input>
-        </ion-item>
-        <ion-button class="senhaesq" (click)="trocartela()" size="small" color="dark" shape="round" fill="clear">
-          Esqueci minha senha
+          <ion-input type="E-mail" placeholder="E-mail"   ></ion-input>
+        <br>
+      
+     </ion-item>
+  <ion-button class="emailteste" (click)="trocartela()" size="medium" color="warning" shape="round" fill="solid">
+          Enviar
+       
         </ion-button>
         <br><br>
         
-  
     </form>
     </div>
   
