@@ -60,6 +60,10 @@ const routes: Routes = [
   },  {
     path: 'sair',
     loadChildren: () => import('./sair/sair.module').then( m => m.SairPageModule)
+  },
+  {
+    path: 'consultas',
+    loadChildren: () => import('./consultas/consultas.module').then( m => m.ConsultasPageModule)
   }
 
   
