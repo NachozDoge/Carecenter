@@ -1,24 +1,34 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header >
+  <ion-toolbar >
+    <ion-title> 
+      <img src="/assets/imgs/carecenterlogo.png" >
+    </ion-title>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>clientes</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color='primary'>
+  <div class="background-card">
+  <ion-card> 
+    
+    <ion-card-content>
+        <div class="title">
+          <center>Consultas</center>
+        </div>
+        <div class="line"></div>
 
-  <ion-list>
-    <ion-item *ngFor="let cliente of lista">
-      <ion-label>{{cliente.nome}}</ion-label>
-      <ion-button (click)="visualizar(cliente)">Visualizar</ion-button>
-    </ion-item>
-  </ion-list>
-  <form>
-    <ion-searchbar #nome></ion-searchbar>
-  </form>
-  <ion-button (click)="pesquisar()">Pesquisar</ion-button>
+        <div class="card-content">
 
-
-</ion-content>
+          <ion-list>
+            <ion-item *ngFor="let cliente of lista">
+              <ion-label>{{cliente.nome}}</ion-label>
+            </ion-item>
+          </ion-list>
+        <form>
+          <ion-searchbar #nome></ion-searchbar>
+        </form>
+        <ion-button (click)="pesquisar()">Pesquisar</ion-button>
+      
+      

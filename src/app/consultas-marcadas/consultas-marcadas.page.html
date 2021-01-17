@@ -26,15 +26,11 @@
 
         <div class="card-content">
 
-          <div class="left-content">
-            Online-
-            <div class="spacing-left-content"></div>
-            <p>Psicólogo no celular</p>
-          </div>
-          <div class="right-content">
-            <ion-icon name="time-outline" style="font-size: 160%; margin: 0 0 0 26%;"></ion-icon>
-            <p style="font-weight: bold;">Em 5 dias</p>
-          </div>
+          <ion-list>
+            <ion-item *ngFor="let cliente of lista">
+              <ion-label>{{cliente.nome}}</ion-label>
+            </ion-item>
+          </ion-list>
           
         </div>
         <div class="line"></div>
