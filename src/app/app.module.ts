@@ -19,6 +19,7 @@ import { PerfilService } from './services/cadastrar.service';
 import { CadastrarPerfilPageModule } from './cadastrar-perfil/cadastrar-perfil.module';
 import { MarcarConsultaPageModule } from './marcar-consulta/marcar-consulta.module';
 import { marcarService } from './services/marcar.service';
+import { exameService } from './services/exame.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -42,6 +43,7 @@ import { marcarService } from './services/marcar.service';
       ClienteService,
       PerfilService,
       marcarService,
+      exameService,
       { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

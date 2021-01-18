@@ -15,30 +15,20 @@
   
   <ion-card>
     <ion-card-header>
-      <center><ion-card-subtitle>Agenda Exame</ion-card-subtitle></center>
+      <center><ion-card-subtitle>Agendar Exame</ion-card-subtitle></center>
 
-    </ion-card-header>
-    <ion-card-content>
-      Tipo de Exame: 
-      <ion-select placeholder="Escolha aqui">
-        <ion-select-option value="p">Sangue</ion-select-option>
-        <ion-select-option value="f">Corona</ion-select-option>
-        <ion-select-option value="o">Vista</ion-select-option>
-      </ion-select>
-    </ion-card-content>
-    <ion-card-content>
-      Cidade: 
-      <ion-select placeholder="Escolha aqui">
-        <ion-select-option value="p">Três Rios</ion-select-option>
-        <ion-select-option value="f">Seropédica</ion-select-option>
-        <ion-select-option value="o">Rio de Janeiro</ion-select-option>
-      </ion-select>
-    </ion-card-content>
-  </ion-card>
-
-
-<div class="nada"></div>
-
-<ion-button class="btnProsseguir" shape="round" size="small" color="dark" expand="block" (click)="openstate()">
-  Buscar
-</ion-button>
+        <form [formGroup]="formGroup">
+      
+          <ion-item>
+            <ion-label position="floating">Tipo de Exame</ion-label>
+            <ion-input type="text" formControlName="sangue"></ion-input>
+          </ion-item>
+      
+      
+          <ion-item>
+            <ion-label position="floating">Cidade</ion-label>
+            <ion-input type="text" formControlName="cidade"></ion-input>
+          </ion-item>
+      
+          <ion-button (click)="cadastrar()" expand="full">Cadastrar</ion-button>
+        </form>
