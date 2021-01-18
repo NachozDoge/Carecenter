@@ -10,6 +10,7 @@ export class Cliente{
     numero: string;
     telefone: string;
 
+
     setData(objFirebase : any){
         this.cidade = objFirebase.cidade;
         this.cpf = objFirebase.cpf;
