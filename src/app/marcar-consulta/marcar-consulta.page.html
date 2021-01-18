@@ -17,31 +17,23 @@
     <ion-card-header>
       <center><ion-card-subtitle>Marcar Consulta</ion-card-subtitle></center>
 
-    </ion-card-header>
-    <ion-card-content>
-      Especialista: 
-      <ion-select placeholder="Escolha aqui">
-        <ion-select-option value="p">Psicólogo</ion-select-option>
-        <ion-select-option value="f">Fisioterapeuta</ion-select-option>
-        <ion-select-option value="o">Orrinolaringologista</ion-select-option>
-      </ion-select>
-    </ion-card-content>
-    <ion-card-content>
-      Cidade: 
-      <ion-select placeholder="Escolha aqui">
-        <ion-select-option value="p">Três Rios</ion-select-option>
-        <ion-select-option value="f">Seropédica</ion-select-option>
-      </ion-select>
-    </ion-card-content>
-    <ion-card-content>
-      Metódo: 
-      <ion-select placeholder="Escolha aqui">
-        <ion-select-option value="p">No Celular</ion-select-option>
-        <ion-select-option value="f">No local</ion-select-option>
-      </ion-select>
-    </ion-card-content>
-  </ion-card>
-<div class="nada"></div>
-<ion-button class="btnProsseguir" shape="round" size="small" color="dark" expand="block" (click)="openstate()">
-  Marcar Consulta
-</ion-button>
+        <form [formGroup]="formGroup">
+      
+          <ion-item>
+            <ion-label position="floating">Especialista</ion-label>
+            <ion-input type="text" formControlName="especialista"></ion-input>
+          </ion-item>
+      
+      
+          <ion-item>
+            <ion-label position="floating">Cidade</ion-label>
+            <ion-input type="text" formControlName="cidade"></ion-input>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label position="floating">Metódo</ion-label>
+            <ion-input type="text" formControlName="metodo"></ion-input>
+          </ion-item>
+      
+          <ion-button (click)="cadastrar()" expand="full">Cadastrar</ion-button>
+        </form>

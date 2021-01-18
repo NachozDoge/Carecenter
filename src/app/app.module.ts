@@ -17,6 +17,8 @@ import { environment } from 'src/environments/environment';
 import { ClienteService } from './services/cliente.service';
 import { PerfilService } from './services/cadastrar.service';
 import { CadastrarPerfilPageModule } from './cadastrar-perfil/cadastrar-perfil.module';
+import { MarcarConsultaPageModule } from './marcar-consulta/marcar-consulta.module';
+import { marcarService } from './services/marcar.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,6 +32,7 @@ import { CadastrarPerfilPageModule } from './cadastrar-perfil/cadastrar-perfil.m
     AngularFirestoreModule,
     AngularFireStorageModule,
     CadastrarPerfilPageModule,
+    MarcarConsultaPageModule,
     FormsModule,
     ReactiveFormsModule,
     ], 
@@ -38,6 +41,7 @@ import { CadastrarPerfilPageModule } from './cadastrar-perfil/cadastrar-perfil.m
       SplashScreen,
       ClienteService,
       PerfilService,
+      marcarService,
       { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
