@@ -1,10 +1,13 @@
-<ion-menu-button></ion-menu-button>
-<body>
+<ion-header class="ion-no-border">
+
+</ion-header>
   
-    <ion-content color="primary" >
-      <ion-button type="button"  value="voltar" onClick="history.go(-1)" class="login" size="medium" color="warning" shape="round" fill="solid">
-        Voltar
-      </ion-button>
+  <ion-content color="primary" >
+
+    <ion-button class="btnVoltar" fill="clear" size="big" color="dark" onClick="history.go(-1)">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-button>
+
     <div class="logo" >
       <img src="/assets/imgs/carecenterlogo.png" style="width:70%;margin-left:16%;margin-top:10%;">
     </div>
@@ -12,22 +15,20 @@
     <div class="login-container">
       <form class="form">
 
-        <ion-item class="ion-margin-top" lines="none">
-          <ion-input type="E-mail" placeholder="E-mail"   ></ion-input>
-        <br>
-      
-     </ion-item>
-  <ion-button class="emailteste" (click)="trocartela()" size="medium" color="warning" shape="round" fill="solid">
+        <ion-item class="ion-margin-redef">
+          <ion-input shape="round" type="text" placeholder="Email"></ion-input>
+        </ion-item>
+
+        <ion-button class="emailteste" (click)="trocartela()" size="medium" color="warning" shape="round" fill="solid">
           Enviar
-       
         </ion-button>
         <br><br>
         
-    </form>
+      </form>
     </div>
   
-</ion-content>
-  </body>
+  </ion-content>
+
   
   
   

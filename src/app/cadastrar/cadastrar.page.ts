@@ -1,6 +1,7 @@
 import { Template } from '@angular/compiler/src/render3/r3_ast';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 import { MenuController, NavController } from '@ionic/angular';
 import { TemplateService } from '../service/template';
 
@@ -17,6 +18,7 @@ export class CadastrarPage implements OnInit {
   constructor(
     private menuCtrl : MenuController,
     private auth : AngularFireAuth,
+    private router: Router,
     private template : TemplateService,
     private navCtrl:NavController,
     private menu: NavController,
@@ -27,6 +29,10 @@ export class CadastrarPage implements OnInit {
 
   ngOnInit() {
   }
+
+  private Logar() {
+    this.router.navigateByUrl('/login');
+   }
 
   cadastro(){
     this.template.loading.then(load=>{

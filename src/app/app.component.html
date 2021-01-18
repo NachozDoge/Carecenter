@@ -3,53 +3,50 @@
     <ion-menu contentId="main-content" type="overlay">
       <ion-content >
         <div class="menu-header-bg"></div>
-        <div class="header-content" >
-          <img src="/assets/imgs/carecenterlogo.png" alt="">
+
+        <div class="header-content">
+
+          <ion-menu-toggle>
+            <img src="/assets/imgs/carecenterlogo.png" routerLink="home">
+          </ion-menu-toggle>
+
           <ion-label>
-           <h2>  Seja Bem-vindo!  </h2> 
+            <h2>  Seja Bem-vindo!  </h2> 
           </ion-label>
+          
         </div>
         
-
         <ion-list class="menu-itens">
+
           <ion-menu-toggle>
-          <ion-item routerLink="marcar-consulta">
-            <ion-icon name="calendar-outline" slot="start"></ion-icon>
-            <ion-label>Marcar consulta</ion-label>
-          </ion-item>
-        </ion-menu-toggle>
-       
-        <ion-menu-toggle>
-            <ion-item routerLink="Perfil">
-            <ion-icon name="calendar-clear-outline" slot="start"></ion-icon>
-            <ion-label>Perfil</ion-label>
-             </ion-item>
-        </ion-menu-toggle>
-
-        
-        <ion-menu-toggle>
-          <ion-item routerLink="consultas">
-          <ion-icon name="calendar-clear-outline" slot="start"></ion-icon>
-          <ion-label>Buscar Consultas</ion-label>
-           </ion-item>
-      </ion-menu-toggle>
-
+            <ion-item routerLink="marcar-consulta">
+              <ion-icon name="calendar-outline" slot="start"></ion-icon>
+              <ion-label>Marcar consulta</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+      
+          <ion-menu-toggle>
+            <ion-item routerLink="consultas">
+              <ion-icon name="calendar-clear-outline" slot="start"></ion-icon>
+              <ion-label>Buscar Consultas</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
 
         <ion-menu-toggle>
           <ion-item routerLink="consultas-marcadas">
-          <ion-icon name="calendar-clear-outline" slot="start"></ion-icon>
-          <ion-label>Consultas marcadas</ion-label>
-           </ion-item>
-      </ion-menu-toggle>
+            <ion-icon name="calendar-clear-outline" slot="start"></ion-icon>
+            <ion-label>Consultas marcadas</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
          
-      <ion-menu-toggle>
-            <ion-item routerLink="agendar-exame">
+        <ion-menu-toggle>
+          <ion-item routerLink="agendar-exame">
             <ion-icon name="checkbox-outline" slot="start"></ion-icon>
             <ion-label>Agendar exame</ion-label>
-            </ion-item>
-      </ion-menu-toggle>
+          </ion-item>
+        </ion-menu-toggle>
         
-      <ion-menu-toggle>
+        <ion-menu-toggle>
           <ion-item routerLink="exames-marcados">
             <ion-icon name="document-outline" slot="start"></ion-icon>
             <ion-label>Exames marcados</ion-label>
@@ -57,7 +54,7 @@
        </ion-menu-toggle>
          
        <ion-menu-toggle>
-            <ion-item routerLink="laudos-medicos">
+          <ion-item routerLink="laudos-medicos">
             <ion-icon name="person-circle-outline" slot="start"></ion-icon>
             <ion-label>Laudos Médicos</ion-label>
           </ion-item>
@@ -68,23 +65,21 @@
             <ion-icon name="pencil-outline" slot="start"></ion-icon>
             <ion-label>Assinatura</ion-label>
           </ion-item>
-       </ion-menu-toggle>
+        </ion-menu-toggle>
          
-      <ion-menu-toggle>
-         <ion-item routerLink="cadastrar">
+        <ion-menu-toggle>
+          <ion-item routerLink="cadastrar">
             <ion-icon name="paper-plane-outline" slot="start"></ion-icon>
             <ion-label>Sobre doenças</ion-label>
-         </ion-item>
-        
-       </ion-menu-toggle>
+          </ion-item>
+        </ion-menu-toggle>
 
-       <ion-menu-toggle>
-        <ion-item routerLink="sair">
-           <ion-icon name="log-out-outline" slot="start"></ion-icon>
-           <ion-label>Sair</ion-label>
-        </ion-item>
-       
-      </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink="sair">
+            <ion-icon name="log-out-outline" slot="start"></ion-icon>
+            <ion-label>Sair</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
           
         </ion-list>
       
