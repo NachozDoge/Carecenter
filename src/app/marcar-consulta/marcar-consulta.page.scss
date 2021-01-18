@@ -18,14 +18,18 @@ ion-title{
 }
 ion-toolbar{
     background-color: transparent;
-    
+}
+
+ion-card-subtitle{
+    font-size: 120%;
 }
 
 ion-label{
    margin-left:5%;
    margin-top:2%;
    color:rgb(46, 46, 46);
-   font-weight: bold;
+   font-weight:bold;
+   font-size: 80%;
 }
 
 .userInfos{
@@ -51,12 +55,6 @@ ion-card-content{
     margin-right: 15%;
 }
 
-ion-item{
-}
-
-ion-input{
-}
-
 .ion-header{
     margin-top: -15px;
     height: 25%;
@@ -70,18 +68,12 @@ ion-input{
     margin-top: 10%;
     color:rgb(46, 46, 46);
 }
-.btnProsseguir{
-    width: 65%;
-    margin-left: 21%;
-    font-weight: bold;
-}
 
 ion-item{
     width: 70%;
     height: auto;
     margin: 0 auto;
    display: block;
-  
 }
 
 .cards{
@@ -104,8 +96,8 @@ ion-item{
 }
 
 .btnMarcar{
-    width: 50%;
-    margin-left: 29%;
+    width: 35%;
+    margin-left: 35%;
     font-weight: bold;
 }
 

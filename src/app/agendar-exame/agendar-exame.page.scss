@@ -28,6 +28,27 @@ ion-label{
    font-weight: bold;
 }
 
+ion-card-title{
+    font-size: 160%;
+    margin-left:8%;
+}
+
+ion-card-subtitle{
+    font-size: 120%;
+}
+
+ion-card{
+    width: 90%;
+}
+
+ion-item{
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+   display: block;
+  
+}
+
 .userInfos{
     float:right;
     display: inline;
@@ -36,25 +57,6 @@ ion-label{
 
 p{
     color:rgb(206, 206, 206);
-}
-
-ion-card-title{
-    font-size: 160%;
-    margin-left:8%;
-}
-
-ion-card{
-    width: 90%;
-}
-
-ion-card-content{
-    margin-right: 15%;
-}
-
-ion-item{
-}
-
-ion-input{
 }
 
 .ion-header{
@@ -70,23 +72,10 @@ ion-input{
     margin-top: 10%;
     color:rgb(46, 46, 46);
 }
-.btnProsseguir{
-    width: 65%;
-    margin-left: 21%;
-    font-weight: bold;
-}
 
-ion-item{
-    width: 70%;
-    height: auto;
-    margin: 0 auto;
-   display: block;
-  
-}
-
-.btnProsseguir{
-    width: 40%;
-    margin-left: 30%;
+.btnMarcar{
+    width: 50%;
+    margin-left: 28%;
     font-weight: bold;
 }
 

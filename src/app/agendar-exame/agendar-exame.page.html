@@ -1,34 +1,44 @@
 <ion-header >
-  <ion-toolbar >
+  <ion-toolbar>
+
     <ion-title> 
       <img src="/assets/imgs/carecenterlogo.png" >
     </ion-title>
+
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    
    
   </ion-toolbar>
 </ion-header>
+
 <ion-content color='primary'> 
-    <div class="ion-left"></div>
+  <div class="ion-left"></div>
   
   <ion-card>
     <ion-card-header>
       <center><ion-card-subtitle>Agendar Exame</ion-card-subtitle></center>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="formGroup">
+      
+        <ion-item>
+          <ion-label position="floating">Tipo de Exame</ion-label>
+          <ion-input type="text" formControlName="sangue"></ion-input>
+        </ion-item>
 
-        <form [formGroup]="formGroup">
-      
-          <ion-item>
-            <ion-label position="floating">Tipo de Exame</ion-label>
-            <ion-input type="text" formControlName="sangue"></ion-input>
-          </ion-item>
-      
-      
-          <ion-item>
-            <ion-label position="floating">Cidade</ion-label>
-            <ion-input type="text" formControlName="cidade"></ion-input>
-          </ion-item>
-      
-          <ion-button (click)="cadastrar()" expand="full">Cadastrar</ion-button>
-        </form>
+        <ion-item>
+          <ion-label position="floating">Cidade</ion-label>
+          <ion-input type="text" formControlName="cidade"></ion-input>
+        </ion-item>
+
+        <div class="separador">
+        </div>
+
+        <ion-button class="btnMarcar" (click)="cadastrar()" expand="full" shape="round" expand="block" size="medium" color="dark">
+          Agendar</ion-button>
+
+      </form>
+    </ion-card-content>
+  </ion-card>
+        
