@@ -1,39 +1,33 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { from, Observable } from 'rxjs';
-import { Marcar } from '../model/marcar';
+import { Perfil } from '../model/perfils';
 
 @Injectable()
-export class marcarService {
-    listaDeConsultas() {
-      throw new Error('Method not implemented.');
-    }
-    openstate(value: any) {
-      throw new Error('Method not implemented.');
-    }
-    marcar: Marcar = new Marcar();
+export class PerfilsService {
+    perfil: Perfil = new Perfil();
 
     constructor(private firestore: AngularFirestore) {
 
     }
 
-    listaDeMarcar(): Observable<any> {
+    listaDePerfil(): Observable<any> {
 
         // Observable -> Aguardar resposta do servidor
         return from(new Observable(observe => { // converter para Observable
 
-            // this.firestore.collection('marcar') -> Selecionar a coleção no Firestore
+            // this.firestore.collection('cliente') -> Selecionar a coleção no Firestore
             // .snapshotChanges().subscribe -> Tentar buscar no servidor
-            // response -> dados baixados do servidor, os marcars
-            this.firestore.collection('marcar').snapshotChanges().subscribe(response => {
-                // transformar response em array de marcars
-                let lista: Marcar[] = [];
+            // response -> dados baixados do servidor, os clientes
+            this.firestore.collection('perfil').snapshotChanges().subscribe(response => {
+                // transformar response em array de clientes
+                let lista: Perfil[] = [];
                 response.map(obj => {
                     // será repetido para cada registro, cada registro do Firestore se chama obj
-                    let marcar: Marcar = new Marcar();
-                    marcar.setData(obj.payload.doc.data());// obj.payload.doc.data() -> Dados do marcar
-                    marcar.id = obj.payload.doc.id; // inserindo ID
-                    lista.push(marcar); // adicionando o marcar na lista // push é adicionar
+                    let perfil: Perfil = new Perfil();
+                    perfil.setData(obj.payload.doc.data());// obj.payload.doc.data() -> Dados do cliente
+                    perfil.id = obj.payload.doc.id; // inserindo ID
+                    lista.push(perfil); // adicionando o cliente na lista // push é adicionar
                 });
                 observe.next(lista);
             })
@@ -46,15 +40,15 @@ export class marcarService {
 
         // Observable -> Aguardar resposta do servidor
         return from(new Observable(observe => { // converter para Observable
-            this.firestore.collection('marcar').ref.orderBy("nome")
+            this.firestore.collection('perfil').ref.orderBy("nome")
                 .startAt(nome).endAt(nome + "\uf8ff").get().then(response => {
-                    let lista: Marcar[] = [];
+                    let lista: Perfil[] = [];
                     response.docs.map(obj => {
                         // será repetido para cada registro, cada registro do Firestore se chama obj
-                        let marcar: Marcar = new Marcar();
-                        marcar.setData(obj.data());// obj.payload.doc.data() -> Dados do marcar
-                        marcar.nome = obj.id; // inserindo ID
-                        lista.push(marcar); // adicionando o marcar na lista // push é adicionar
+                        let perfil: Perfil = new Perfil();
+                        perfil.setData(obj.data());// obj.payload.doc.data() -> Dados do cliente
+                        perfil.id = obj.id; // inserindo ID
+                        lista.push(perfil); // adicionando o cliente na lista // push é adicionar
                     });
                     observe.next(lista);
                 })
@@ -62,10 +56,10 @@ export class marcarService {
         }))
     }
 
-    getmarcar(idUser) {
+    getPerfil(idUser) {
         return from(new Observable(observe => { // converter para Observable
 
-            this.firestore.collection("marcar").doc(idUser).get().subscribe(response => { // .doc seleciona o marcar com base no id
+            this.firestore.collection("perfil").doc(idUser).get().subscribe(response => { // .doc seleciona o cliente com base no id
 
                 if (response.exists == false) {
 
@@ -80,10 +74,10 @@ export class marcarService {
 
     //
 
-    cadastrar(marcar: any): Observable<any> {
+    cadastrar(cliente: any): Observable<any> {
         return from(new Observable(observe => {
             // add cria um novo documento
-            this.firestore.collection('marcar').add(marcar).then(response => {
+            this.firestore.collection('cliente').add(cliente).then(response => {
                 observe.next("Cadastrado com sucesso!");
             }, (err) => {
                 observe.error("Erro ao cadastrar!");
@@ -95,12 +89,12 @@ export class marcarService {
     buscaPorId(id: any): Observable<any> {
         return from(new Observable(observe => {
             // .doc(id).snapshotChanges() -> Busca pelo id do documento
-            this.firestore.collection('marcar').doc(id).snapshotChanges().subscribe(response => {
+            this.firestore.collection('cliente').doc(id).snapshotChanges().subscribe(response => {
                 console.log(response);
-                let marcar: Marcar = new Marcar();
-                marcar.id = response.payload.id;
-                marcar.setData(response.payload.data());
-                observe.next(marcar);
+                let perfil: Perfil = new Perfil();
+                perfil.id = response.payload.id;
+                perfil.setData(response.payload.data());
+                observe.next(perfil);
 
             }, (err) => {
                 observe.error("Erro ao buscar o ID!");
@@ -111,10 +105,10 @@ export class marcarService {
 
 
 
-    atualizar(marcar: any): Observable<any> {
+    atualizar(cliente: any): Observable<any> {
         return from(new Observable(observe => {
 
-            this.firestore.collection('marcar').doc(marcar.id).set(marcar).then(response => {
+            this.firestore.collection('cliente').doc(cliente.id).set(cliente).then(response => {
                 observe.next("Atualizado com sucesso!");
             }, (err) => {
                 observe.error("Erro ao atualizar!");
@@ -123,10 +117,10 @@ export class marcarService {
         }));
     }
 
-    excluir(marcar: any): Observable<any> {
+    excluir(cliente: any): Observable<any> {
         return from(new Observable(observe => {
 
-            this.firestore.collection('marcar').doc(marcar.id).delete().then(response => {
+            this.firestore.collection('cliente').doc(cliente.id).delete().then(response => {
                 observe.next("Excluído com sucesso!");
             }, (err) => {
                 observe.error("Erro ao excluir!");
@@ -135,16 +129,16 @@ export class marcarService {
         }));
     }
 
-    // carregar o marcar do marcar (qualquer coleção)
-    buscamarcarPorId(uid: any): Observable<any> { // uid -> authenticator
+    // carregar o perfil do cliente (qualquer coleção)
+    buscaPerfilPorId(uid: any): Observable<any> { // uid -> authenticator
         return from(new Observable(observe => {
-            this.firestore.collection('marcar').doc(uid).snapshotChanges().subscribe(response => {
+            this.firestore.collection('perfil').doc(uid).snapshotChanges().subscribe(response => {
                 if (response.payload.exists !== false) {
 
-                    let marcar: Marcar = new Marcar();
-                    marcar.id = response.payload.id;
-                    marcar.setData(response.payload.data());
-                    observe.next(marcar);
+                    let cliente: Perfil = new Perfil();
+                    cliente.id = response.payload.id;
+                    cliente.setData(response.payload.data());
+                    observe.next(cliente);
                 }
 
             }, (err) => {
@@ -154,11 +148,11 @@ export class marcarService {
         }));
     }
 
-    // Atualiza marcar, 
-    atualizamarcar(uid, dados) {
+    // Atualiza perfil, 
+    atualizaPerfil(uid, dados) {
         return from(new Observable(observe => {
 
-            this.firestore.collection('marcar').doc(uid).set(dados).then(response => {
+            this.firestore.collection('perfil').doc(uid).set(dados).then(response => {
                 observe.next("Atualizado com sucesso!");
             }, (err) => {
                 observe.error("Erro ao atualizar!");

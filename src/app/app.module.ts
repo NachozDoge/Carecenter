@@ -20,6 +20,8 @@ import { CadastrarPerfilPageModule } from './cadastrar-perfil/cadastrar-perfil.m
 import { MarcarConsultaPageModule } from './marcar-consulta/marcar-consulta.module';
 import { marcarService } from './services/marcar.service';
 import { exameService } from './services/exame.service';
+import { PerfilsPageModule } from './perfils/perfils.module';
+import { PerfilsService } from './services/perfils.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -34,6 +36,7 @@ import { exameService } from './services/exame.service';
     AngularFireStorageModule,
     CadastrarPerfilPageModule,
     MarcarConsultaPageModule,
+    PerfilsPageModule,
     FormsModule,
     ReactiveFormsModule,
     ], 
@@ -42,6 +45,7 @@ import { exameService } from './services/exame.service';
       SplashScreen,
       ClienteService,
       PerfilService,
+      PerfilsService,
       marcarService,
       exameService,
       { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

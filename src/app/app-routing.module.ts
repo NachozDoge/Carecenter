@@ -57,7 +57,8 @@ const routes: Routes = [
   {
     path: 'consultas-marcadas',
     loadChildren: () => import('./consultas-marcadas/consultas-marcadas.module').then( m => m.ConsultasMarcadasPageModule)
-  },  {
+  },
+  {
     path: 'sair',
     loadChildren: () => import('./sair/sair.module').then( m => m.SairPageModule)
   },
@@ -66,12 +67,12 @@ const routes: Routes = [
     loadChildren: () => import('./consultas/consultas.module').then( m => m.ConsultasPageModule)
   },
   {
-    path: 'perfil',
-    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
-  },
-  {
     path: 'cadastrar-perfil',
     loadChildren: () => import('./cadastrar-perfil/cadastrar-perfil.module').then( m => m.CadastrarPerfilPageModule)
+  },
+  {
+    path: 'perfils',
+    loadChildren: () => import('./perfils/perfils.module').then( m => m.PerfilsPageModule)
   }
 
   

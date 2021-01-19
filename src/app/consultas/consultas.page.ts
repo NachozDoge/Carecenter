@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { Cliente } from '../model/cliente';
-import { ClienteService } from '../services/cliente.service';
+import { Marcar } from '../model/marcar';
+import { marcarService } from '../services/marcar.service';
 @Component({
   selector: 'app-consultas',
   templateUrl: './consultas.page.html',
@@ -9,15 +9,15 @@ import { ClienteService } from '../services/cliente.service';
 })
 export class ConsultasPage implements OnInit {
   
-  @ViewChild("nome") nome; 
+  @ViewChild("id") id; 
 
-  lista : Cliente[] = [];
+  lista : Marcar[] = [];
 
-  constructor(private clienteServ : ClienteService,
+  constructor(private marcarServ : marcarService,
     private navCtrl : NavController) { }
 
   ngOnInit() {
-    this.clienteServ.listaDeClientes().subscribe(response=>{
+    this.marcarServ.listaDeMarcar().subscribe(response=>{
       // O servidor respondeu
       
       this.lista = response;
@@ -29,13 +29,13 @@ export class ConsultasPage implements OnInit {
     })
   }
 
-  visualizar(cliente){
-    this.navCtrl.navigateForward(['/clientes-visualizar',cliente.id])
+  visualizar(nome){
+    this.navCtrl.navigateForward(['/clientes-visualizar',nome.id])
   }
 
   pesquisar(){
-    console.log("Busca por: "+this.nome.value)
-    this.clienteServ.buscaPorNome(this.nome.value).subscribe(response=>{
+    console.log("Busca por: "+this.id.value)
+    this.marcarServ.buscaPorNome(this.id.value).subscribe(response=>{
       this.lista = [];
       this.lista = response;
     });
