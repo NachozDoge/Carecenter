@@ -34,8 +34,8 @@ export class ConsultasPage implements OnInit {
   }
 
   pesquisar(){
-    console.log("Busca por: "+this.id.value)
-    this.marcarServ.buscaPorNome(this.id.value).subscribe(response=>{
+    console.log("Busca por: "+this.nome.value)
+    this.marcarServ.buscaPorNome(this.nome.value).subscribe(response=>{
       this.lista = [];
       this.lista = response;
     });
