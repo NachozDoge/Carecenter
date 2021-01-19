@@ -9,7 +9,7 @@ import { marcarService } from '../services/marcar.service';
 })
 export class ConsultasPage implements OnInit {
   
-  @ViewChild("id") id; 
+  @ViewChild("nome") nome; 
 
   lista : Marcar[] = [];
 
