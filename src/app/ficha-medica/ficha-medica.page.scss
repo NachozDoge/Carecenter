@@ -1,10 +1,10 @@
 ion-avatar,
 ion-avatar > img{
     border-radius:50%;
-    height:7rem;
-    width:7rem;
-    margin-left: 29%;
-    margin-top: 5px;
+    height:10rem;
+    width:10rem;
+    margin-left: 22.5%;
+    margin-top: 0;
     position: absolute;
     display: block;
     top: 46px;
@@ -47,12 +47,6 @@ ion-card{
     width: 90%;
 }
 
-ion-item{
-}
-
-ion-input{
-}
-
 .ion-header{
     margin-top: -15px;
     height: 25%;
@@ -62,8 +56,12 @@ ion-input{
     border-radius: 0px 0px 5% 5%;
 }
 
+.cards{
+    margin-top: 0;
+}
+
 .separador{
-    margin-top: 10%;
+    padding-bottom: 10%;
 }
 
 .btnProsseguir{
@@ -78,10 +76,6 @@ ion-item{
     margin: 0 auto;
    display: block;
   
-}
-
-.cards{
-    margin-top:25%;
 }
 
 .userInfoRow{
