@@ -72,6 +72,10 @@ const routes: Routes = [
   {
     path: 'cadastrar-perfil',
     loadChildren: () => import('./cadastrar-perfil/cadastrar-perfil.module').then( m => m.CadastrarPerfilPageModule)
+  },
+  {
+    path: 'perfils',
+    loadChildren: () => import('./perfils/perfils.module').then( m => m.PerfilsPageModule)
   }
 
   
