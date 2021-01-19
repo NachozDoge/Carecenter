@@ -1,25 +1,15 @@
 export class Marcar{
 
     id : string;
-    cidade: string;
-    cpf: string;
-    email: string;
-    endereco: string;
-    estado: string;
     nome: string;
-    numero: string;
-    telefone: string;
+    cidade: string;
+    metodo: string;
 
 
     setData(objFirebase : any){
+        this.nome = objFirebase.cpf;
         this.cidade = objFirebase.cidade;
-        this.cpf = objFirebase.cpf;
-        this.email = objFirebase.email;
-        this.endereco = objFirebase.endereco;
-        this.nome = objFirebase.nome;
-        this.numero = objFirebase.numero;
-        this.telefone = objFirebase.telefone;
-        this.estado = objFirebase.estado;
+        this.metodo = objFirebase.email;
     }
 
 }
