@@ -25,51 +25,25 @@
         <div class="line"></div>
 
 <!-- 1st item-->
-        <div class="card-content">
+<div class="card-content">
+  <ion-list>
+    <ion-item *ngFor="let exame of lista">
+      <ion-label>{{exame.sangue}}</ion-label>
+    </ion-item>
+      
 
-          <div class="left-content">
-            Teste de Covid
-          </div>
-          
-          <div class="right-content">
-            <p style="display:inline;float:left;margin-top:15%;font-weight: bold;">Em 2 dias</p>
-            <ion-icon name="time-outline" style="font-size: 160%;margin-top: 10%;"></ion-icon>
-          </div>
-          
-        </div>
+</ion-list>   
+</div>
 
-        <div class="line"></div>
+       
 
 <!-- 2nd item-->
-        <div class="card-content">
-
-          <div class="left-content">
-            Ultrasom
-          </div>
-
-          <div class="right-content">
-            <p style="display:inline;float:left;margin-top:15%;font-weight: bold;">Em 5 dias</p>
-            <ion-icon name="time-outline" style="font-size: 160%;margin-top: 10%;"></ion-icon>
-          </div>
-          
-        </div>
-        <div class="line"></div>
+       
+      
 
 <!-- 3rd item-->
-          <div class="card-content">
+         
 
-          <div class="left-content">
-            Exame de vista
-          </div>
-          
-          <div class="right-content">
-            <p style="display:inline;float:left;margin-top:15%;font-weight: bold;">Em 11 dias</p>
-            <ion-icon name="time-outline" style="font-size: 160%;margin-top: 10%;"></ion-icon>
-          </div>
-          
-        </div>
-
-        <div class="line"></div>
 
     </ion-card-content>
   </ion-card>
@@ -84,37 +58,21 @@
         <div class="title">
           <center>Anteriores</center>
         </div>
-        <div class="line"></div>
+      
 
 <!-- 1st item-->
-        <div class="card-content">
-
-          <div class="left-content">
-            RaioX
-          </div>
-
-          <div class="right-content" button (click)="buttonClick()">
-            <p style="display:inline;float:left;margin-top:20%;font-weight: bold;">Baixar‏‏‎ ‎‏‏‎ ‎</p>
-            <ion-icon name="cloud-download" style="font-size: 160%;margin-top: 15%;"></ion-icon>
-          </div>
-          
-        </div>
-        <div class="line"></div>
+<div class="card-content">
+  <ion-list>
+    <ion-item *ngFor="let exame of lista">
+      <ion-label>{{exame.sangue}}</ion-label>
+    </ion-item>
+  </ion-list>        
+</div>
+       
 
 <!-- 2nd item-->
-        <div class="card-content">
-
-          <div class="left-content">
-            Exame de sangue
-          </div>
-
-          <div class="right-content" button (click)="buttonClick()">
-            <p style="display:inline;float:left;margin-top:20%;font-weight: bold;">Baixar‏‏‎ ‎‏‏‎ ‎</p>
-            <ion-icon name="cloud-download" style="font-size: 160%;margin-top: 15%;"></ion-icon>
-          </div>
-          
-        </div>
-        <div class="line"></div>
+        
+     
 
     </ion-card-content>
   </ion-card>
