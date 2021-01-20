@@ -24,7 +24,12 @@
           <ion-list>
             <ion-item *ngFor="let perfil of lista">
               <ion-label>{{perfil.nome}}</ion-label>
+              <ion-button (click)="visualizar(perfil)">Visualizar</ion-button>
             </ion-item>
           </ion-list>
+          <form>
+            <ion-searchbar #nome></ion-searchbar>
+          </form>
+          <ion-button (click)="pesquisar()">Pesquisar</ion-button>
       
       
