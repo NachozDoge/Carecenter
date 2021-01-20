@@ -30,7 +30,7 @@ export class ConsultasPage implements OnInit {
   }
 
   visualizar(nome){
-    this.navCtrl.navigateForward(['/clientes-visualizar',nome.id])
+    this.navCtrl.navigateForward(['/consultas-visualizar',nome])
   }
 
   pesquisar(){

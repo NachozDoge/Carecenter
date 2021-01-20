@@ -24,7 +24,12 @@
           <ion-list>
             <ion-item *ngFor="let marcar of lista">
               <ion-label>{{marcar.nome}}</ion-label>
+              <ion-button (click)="visualizar(marcar)">Visualizar</ion-button>
             </ion-item>
           </ion-list>
+          <form>
+            <ion-searchbar #nome></ion-searchbar>
+          </form>
+          <ion-button (click)="pesquisar()">Pesquisar</ion-button>
       
       
