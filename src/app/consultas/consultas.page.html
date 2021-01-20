@@ -11,25 +11,33 @@
 
 <ion-content color='primary'>
   <div class="background-card">
-  <ion-card> 
-    
-    <ion-card-content>
-        <div class="title">
-          <center>Consultas</center>
-        </div>
-        <div class="line"></div>
+    <ion-card>  
+        <ion-card-content>
 
-        <div class="card-content">
+            <div class="title">
+              <center>Consultas</center>
+            </div>
+            <div class="separador"></div>
 
-          <ion-list>
-            <ion-item *ngFor="let marcar of lista">
-              <ion-label>{{marcar.nome}}</ion-label>
-              <ion-button (click)="visualizar(marcar)">Visualizar</ion-button>
-            </ion-item>
-          </ion-list>
-          <form>
-            <ion-searchbar #nome></ion-searchbar>
-          </form>
-          <ion-button (click)="pesquisar()">Pesquisar</ion-button>
+            <div class="card-content">
+              <div class="SBar">
+                <form class="searchbar">
+                  <ion-searchbar #nome></ion-searchbar>
+                </form>
+                <ion-button shape="round" color="dark" class="btnSearchbar" (click)="pesquisar()">Pesquisar</ion-button>
+              </div>
+
+              <ion-list>
+                <ion-item *ngFor="let marcar of lista">
+                  <ion-label>{{marcar.nome}}</ion-label>
+                  <ion-button color="dark" (click)="visualizar(marcar)">Visualizar</ion-button>
+                </ion-item>
+              </ion-list>
+            </div>
+
+        </ion-card-content>
+      </ion-card>
+  </div>
+</ion-content>
       
       

@@ -1,0 +1,44 @@
+ion-title{
+    margin-left: 40%;
+    img{
+        height: 72px;
+    }
+}
+
+ion-toolbar{
+    background-color: transparent;
+    
+}
+
+.title{
+    font-weight: bold;
+    font-size: 120%;
+}
+
+.separador{
+    padding-bottom: 3%;
+}
+
+.SBar{
+    width: 100%;
+    display: block;
+}
+.searchbar{
+    width: 70%;
+    display: inline-block;
+}
+
+.btnSearchbar{
+    display: inline;
+    float: right;
+    margin-top: 3.4%;
+    font-size: 70%;
+    font-weight: bold;
+    color: white;
+    width: 25%;
+}
+
+.separadaraInline{
+    display: inline;
+    float: auto;
+}
