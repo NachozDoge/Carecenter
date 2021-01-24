@@ -29,8 +29,8 @@ export class PerfilsPage implements OnInit {
     })
   }
 
-  visualizar(nome){
-    this.navCtrl.navigateForward(['/clientes-visualizar',nome.id])
+  visualizar(id){
+    this.navCtrl.navigateForward(['/perfils-visualizar',id])
   }
 
   pesquisar(){

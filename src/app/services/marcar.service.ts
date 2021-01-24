@@ -53,7 +53,7 @@ export class marcarService {
                         // será repetido para cada registro, cada registro do Firestore se chama obj
                         let marcar: Marcar = new Marcar();
                         marcar.setData(obj.data());// obj.payload.doc.data() -> Dados do marcar
-                        marcar.nome = obj.id; // inserindo ID
+                        marcar.id = obj.id; // inserindo ID
                         lista.push(marcar); // adicionando o marcar na lista // push é adicionar
                     });
                     observe.next(lista);

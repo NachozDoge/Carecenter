@@ -89,7 +89,7 @@ export class PerfilsService {
     buscaPorId(id: any): Observable<any> {
         return from(new Observable(observe => {
             // .doc(id).snapshotChanges() -> Busca pelo id do documento
-            this.firestore.collection('cliente').doc(id).snapshotChanges().subscribe(response => {
+            this.firestore.collection('perfil').doc(id).snapshotChanges().subscribe(response => {
                 console.log(response);
                 let perfil: Perfil = new Perfil();
                 perfil.id = response.payload.id;
