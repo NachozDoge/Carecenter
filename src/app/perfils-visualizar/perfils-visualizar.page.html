@@ -1,0 +1,58 @@
+<ion-header class="ion-no-border">
+</ion-header>
+
+<ion-content color="primary">
+
+  <ion-button class="btnVoltar" fill="clear" size="big" color="dark" onClick="history.go(-1)">
+    <ion-icon name="chevron-back-outline"></ion-icon>
+  </ion-button>
+
+  <div class="ion-header">
+    <ion-avatar >
+      <img src="/assets/imgs/usuario.png" >
+    </ion-avatar>
+  </div>
+
+  <ion-card>
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input disabled="true" value="{{perfil.nome}}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Cpf</ion-label>
+      <ion-input disabled="true" value="{{perfil.cpf}}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Endereço</ion-label>
+      <ion-input disabled="true" value="{{perfil.endereco}}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Número</ion-label>
+      <ion-input disabled="true" value="{{perfil.numero}}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Cidade</ion-label>
+      <ion-input disabled="true" value="{{perfil.cidade}}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Estado</ion-label>
+      <ion-input disabled="true" value="{{perfil.estado}}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">E-mail</ion-label>
+      <ion-input disabled="true" value="{{perfil.email}}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Telefone</ion-label>
+      <ion-input disabled="true" value="{{perfil.telefone}}"></ion-input>
+    </ion-item>
+  </ion-card>
+
+</ion-content>

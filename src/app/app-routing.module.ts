@@ -77,7 +77,15 @@ const routes: Routes = [
   {
     path: 'perfils',
     loadChildren: () => import('./perfils/perfils.module').then( m => m.PerfilsPageModule)
+  },  {
+    path: 'consultas-visualizar',
+    loadChildren: () => import('./consultas-visualizar/consultas-visualizar.module').then( m => m.ConsultasVisualizarPageModule)
+  },
+  {
+    path: 'perfils-visualizar',
+    loadChildren: () => import('./perfils-visualizar/perfils-visualizar.module').then( m => m.PerfilsVisualizarPageModule)
   }
+
 
   
 ];

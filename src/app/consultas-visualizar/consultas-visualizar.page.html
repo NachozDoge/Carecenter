@@ -1,0 +1,32 @@
+<ion-header class="ion-no-border">
+</ion-header>
+
+<ion-content color="primary">
+
+  <ion-button class="btnVoltar" fill="clear" size="big" color="dark" onClick="history.go(-1)">
+    <ion-icon name="chevron-back-outline"></ion-icon>
+  </ion-button>
+
+  <ion-card>
+    <ion-item>
+      <ion-label position="floating">Especialista</ion-label>
+      <ion-input disabled="true" value="{{marcar.nome}}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Cidade</ion-label>
+      <ion-input disabled="true" value="{{marcar.cidade}}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Metódo</ion-label>
+      <ion-input disabled="true" value="{{marcar.metodo}}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Feita por:</ion-label>
+      <ion-input disabled="true" value="Mateus"></ion-input>
+    </ion-item>
+  </ion-card>
+
+</ion-content>
