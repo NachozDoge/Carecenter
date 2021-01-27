@@ -20,6 +20,12 @@
     </ion-item>
 
     <ion-item>
+      <ion-label position="floating">Idade</ion-label>
+      <ion-input disabled="true" value="{{perfil.idade}}"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
       <ion-label position="floating">Cpf</ion-label>
       <ion-input disabled="true" value="{{perfil.cpf}}"></ion-input>
     </ion-item>
@@ -53,6 +59,9 @@
       <ion-label position="floating">Telefone</ion-label>
       <ion-input disabled="true" value="{{perfil.telefone}}"></ion-input>
     </ion-item>
+
+    <ion-button (click)="atualizar()" expand="full">Atualizar</ion-button>
+
   </ion-card>
 
 </ion-content>

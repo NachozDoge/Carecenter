@@ -33,7 +33,7 @@ export class PerfilsVisualizarPage implements OnInit {
   }
 
   atualizar(){
-    this.navCtrl.navigateForward(['/clientes-atualizar',this.perfil.id]);
+    this.navCtrl.navigateForward(['/perfils-atualizar',this.perfil.id]);
   }
 
   excluir(){
