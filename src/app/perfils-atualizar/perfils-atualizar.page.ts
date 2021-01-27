@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { NavController } from '@ionic/angular';
+import { MenuController, NavController } from '@ionic/angular';
 import { Perfil } from '../model/cadastrar';
 import { TemplateService } from '../service/template';
 import { PerfilService } from '../services/cadastrar.service';
@@ -18,6 +18,7 @@ export class PerfilsAtualizarPage implements OnInit {
   perfil : Perfil = new Perfil();
 
   constructor(private perfilServ : PerfilService,
+    private menuCtrl : MenuController,
     private route: ActivatedRoute,
     private navCtrl : NavController,
     private formBuilder : FormBuilder,
