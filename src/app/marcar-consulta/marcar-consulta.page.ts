@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { marcarService } from '../services/marcar.service';
+import { ConsultaService } from '../services/consulta.service';
 import { TemplateService } from '../services/template.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class MarcarConsultaPage implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     private template: TemplateService,
-    private marcarServ: marcarService,
+    private marcarServ: ConsultaService,
   ) {
     this.iniciarForm();
   }

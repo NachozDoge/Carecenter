@@ -19,26 +19,35 @@
 
         <form [formGroup]="formGroup">
       
-          <ion-item>
-            <ion-label position="floating">Especialista</ion-label>
-            <ion-input type="text" formControlName="nome"></ion-input>
-          </ion-item>
-      
-      
-          <ion-item>
-            <ion-label position="floating">Cidade</ion-label>
-            <ion-input type="text" formControlName="cidade"></ion-input>
-          </ion-item>
-      
-          <ion-item>
-            <ion-label position="floating">Metódo</ion-label>
-            <ion-input type="text" formControlName="metodo"></ion-input>
-          </ion-item>
-      
-          <div class="separador">
-          </div>
-
-          <ion-button class="btnMarcar" (click)="cadastrar()" expand="full" shape="round" expand="block" size="medium" color="dark">
-            Marcar</ion-button>
+          <ion-list>
+            <ion-item>
+              <ion-label>Especialista</ion-label>
+              <ion-select value="especialidade">
+                <ion-select-option value="f">Fisioterapeuta</ion-select-option>
+                <ion-select-option value="n">Nutricionista</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
             
-        </form>
+          <ion-list>
+            <ion-item>
+              <ion-label>Data</ion-label>
+              <ion-datetime value="1990-02-19" placeholder="Select Date"></ion-datetime>
+            </ion-item>
+          </ion-list>
+
+          <ion-list>
+            <ion-item>
+              <ion-label>Metódo</ion-label>
+              <ion-select value="dog">
+                <ion-select-option value="cat">Online</ion-select-option>
+                <ion-select-option value="dog">Chat</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+          
+      </form>
+
+        <ion-button class="btnProsseguir" shape="round" size="medium" color="dark" expand="block"
+        (click)="cadastrar()">Marcar</ion-button>
+        

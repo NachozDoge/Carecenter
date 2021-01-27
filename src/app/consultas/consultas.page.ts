@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { Marcar } from '../model/marcar';
-import { marcarService } from '../services/marcar.service';
+import { Consulta } from '../model/consulta';
+import { ConsultaService } from '../services/consulta.service';
 @Component({
   selector: 'app-consultas',
   templateUrl: './consultas.page.html',
@@ -11,13 +11,13 @@ export class ConsultasPage implements OnInit {
   
   @ViewChild("nome") nome; 
 
-  lista : Marcar[] = [];
+  lista : Consulta[] = [];
 
-  constructor(private marcarServ : marcarService,
+  constructor(private consultaServ : ConsultaService,
     private navCtrl : NavController) { }
 
   ngOnInit() {
-    this.marcarServ.listaDeMarcar().subscribe(response=>{
+    this.consultaServ.listaDeConsultas().subscribe(response=>{
       // O servidor respondeu
       
       this.lista = response;
@@ -35,7 +35,7 @@ export class ConsultasPage implements OnInit {
 
   pesquisar(){
     console.log("Busca por: "+this.nome.value)
-    this.marcarServ.buscaPorNome(this.nome.value).subscribe(response=>{
+    this.consultaServ.buscaPorNome(this.nome.value).subscribe(response=>{
       this.lista = [];
       this.lista = response;
     });

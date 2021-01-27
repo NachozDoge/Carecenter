@@ -18,7 +18,7 @@ import { ClienteService } from './services/cliente.service';
 import { PerfilService } from './services/cadastrar.service';
 import { CadastrarPerfilPageModule } from './cadastrar-perfil/cadastrar-perfil.module';
 import { MarcarConsultaPageModule } from './marcar-consulta/marcar-consulta.module';
-import { marcarService } from './services/marcar.service';
+import { ConsultaService } from './services/consulta.service';
 import { exameService } from './services/exame.service';
 import { PerfilsPageModule } from './perfils/perfils.module';
 import { PerfilsService } from './services/perfils.service';
@@ -46,8 +46,9 @@ import { PerfilsService } from './services/perfils.service';
       ClienteService,
       PerfilService,
       PerfilsService,
-      marcarService,
+      ConsultaService,
       exameService,
+      
       { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

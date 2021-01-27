@@ -1,17 +1,17 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
-import { Marcar } from '../model/marcar';
-import { marcarService } from '../services/marcar.service';
+import { Consulta } from '../model/consulta';
+import { ConsultaService } from '../services/consulta.service';
 @Component({
   selector: 'app-consultas-visualizar',
   templateUrl: './consultas-visualizar.page.html',
   styleUrls: ['./consultas-visualizar.page.scss'],
 })
 export class ConsultasVisualizarPage implements OnInit {
-  marcar : Marcar = new Marcar();
+  consulta : Consulta = new Consulta();
 
-  constructor(private clienteServ : marcarService,
+  constructor(private clienteServ : ConsultaService,
     private route: ActivatedRoute,
     private navCtrl : NavController) { }
 
@@ -21,7 +21,7 @@ export class ConsultasVisualizarPage implements OnInit {
       let id = url.get('id');
       
       this.clienteServ.buscaPorId(id).subscribe(response=>{
-        this.marcar = response;
+        this.consulta = response;
         
       })
 
@@ -30,11 +30,11 @@ export class ConsultasVisualizarPage implements OnInit {
   }
 
   atualizar(){
-    this.navCtrl.navigateForward(['/clientes-atualizar',this.marcar.id]);
+    this.navCtrl.navigateForward(['/clientes-atualizar',this.consulta.id]);
   }
 
   excluir(){
-    this.navCtrl.navigateForward(['/clientes-excluir',this.marcar.id]);
+    this.navCtrl.navigateForward(['/clientes-excluir',this.consulta.id]);
   }
 
 }

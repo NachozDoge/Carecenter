@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MenuController, NavController } from '@ionic/angular';
-import { Marcar } from '../model/marcar';
-import { marcarService } from '../services/marcar.service';
+import { Consulta } from '../model/consulta';
+import { ConsultaService } from '../services/consulta.service';
 
 @Component({
   selector: 'app-consultas-marcadas',
@@ -12,13 +12,13 @@ export class ConsultasMarcadasPage implements OnInit {
 
   @ViewChild("id") id; 
 
-  lista : Marcar[] = [];
+  lista : Consulta[] = [];
 
-  constructor(private marcarServ : marcarService,
+  constructor(private marcarServ : ConsultaService,
     private navCtrl : NavController) { }
 
   ngOnInit() {
-    this.marcarServ.listaDeMarcar().subscribe(response=>{
+    this.marcarServ.listaDeConsultas().subscribe(response=>{
       // O servidor respondeu
       
       this.lista = response;
