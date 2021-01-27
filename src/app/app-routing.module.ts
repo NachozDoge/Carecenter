@@ -88,6 +88,10 @@ const routes: Routes = [
   {
     path: 'perfils-atualizar',
     loadChildren: () => import('./perfils-atualizar/perfils-atualizar.module').then( m => m.PerfilsAtualizarPageModule)
+  },
+  {
+    path: 'exame-visualizar',
+    loadChildren: () => import('./exame-visualizar/exame-visualizar.module').then( m => m.ExameVisualizarPageModule)
   }
 
 

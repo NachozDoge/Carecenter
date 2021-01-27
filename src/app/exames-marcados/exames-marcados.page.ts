@@ -40,7 +40,7 @@ export class ExamesMarcadosPage implements OnInit {
   }
 
   visualizar(exame){
-    this.navCtrl.navigateForward(['/clientes-visualizar',exame.id])
+    this.navCtrl.navigateForward(['/exame-visualizar',exame.id])
   }
 
   pesquisar(){
