@@ -26,8 +26,8 @@ export class AgendarExamePage implements OnInit {
     this.formGroup = this.formBuilder.group({
       id: [],
       sangue: [],
-      cidade: [],
-      medico: [],
+      data: [],
+      bairro: [],
     })
   }
 

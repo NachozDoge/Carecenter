@@ -22,26 +22,38 @@
     <ion-card-content>
       <form [formGroup]="formGroup">
       
-        <ion-item>
-          <ion-label position="floating">Tipo de Exame</ion-label>
-          <ion-input type="text" formControlName="sangue"></ion-input>
-        </ion-item>
+        <ion-list>
+          <ion-item>
+            <ion-label>Tipo de Exame</ion-label>
+            <ion-select value="especialidade">
+              <ion-select-option value="c">Covid</ion-select-option>
+              <ion-select-option value="s">Sangue</ion-select-option>
+              <ion-select-option value="raiox">Raio-X</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+          
+        <ion-list>
+          <ion-item>
+            <ion-label>Data</ion-label>
+            <ion-datetime value="1990-02-19" placeholder="Select Date"></ion-datetime>
+          </ion-item>
+        </ion-list>
 
-        <ion-item>
-          <ion-label position="floating">Cidade</ion-label>
-          <ion-input type="text" formControlName="cidade"></ion-input>
-        </ion-item>
+        <ion-list>
+          <ion-item>
+            <ion-label>Bairro</ion-label>
+            <ion-select value="bairro">
+              <ion-select-option value="c">Campo Grande</ion-select-option>
+              <ion-select-option value="s">Seropédica</ion-select-option>
+              <ion-select-option value="b">Bangu</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
 
-        <ion-item>
-          <ion-label position="floating">Médico</ion-label>
-          <ion-input type="text" formControlName="medico"></ion-input>
-        </ion-item>
-
-        <div class="separador">
-        </div>
-
-        <ion-button class="btnMarcar" (click)="cadastrar()" expand="full" shape="round" expand="block" size="medium" color="dark">
-          Agendar</ion-button>
+        <ion-button class="btnProsseguir" shape="round" size="medium" color="dark" expand="block"
+        (click)="cadastrar()">Agendar</ion-button>
+        
 
       </form>
     </ion-card-content>
