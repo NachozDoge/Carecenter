@@ -14,7 +14,7 @@ export class PerfilsVisualizarPage implements OnInit {
 
   perfil : Perfil = new Perfil();
 
-  constructor(private perfilServ : PerfilsService,
+  constructor(private perfilsServ : PerfilsService,
     private route: ActivatedRoute,
     private navCtrl : NavController) { }
 
@@ -23,7 +23,7 @@ export class PerfilsVisualizarPage implements OnInit {
     this.route.paramMap.subscribe(url=>{
       let id = url.get('id');
       
-      this.perfilServ.buscaPorId(id).subscribe(response=>{
+      this.perfilsServ.buscaPorId(id).subscribe(response=>{
         this.perfil = response;
         
       })
