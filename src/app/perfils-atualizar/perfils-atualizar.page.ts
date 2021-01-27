@@ -60,7 +60,6 @@ export class PerfilsAtualizarPage implements OnInit {
     this.formGroup = this.formBuilder.group({
       id: [this.perfil.id],
       nome: [this.perfil.nome],
-      idade: [this.perfil.idade],
       cpf: [this.perfil.cpf],
       endereco: [this.perfil.endereco],
       numero: [this.perfil.numero],

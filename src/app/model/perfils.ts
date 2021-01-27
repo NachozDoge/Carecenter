@@ -2,7 +2,6 @@ export class Perfil{
 
     id : string;
     cidade: string;
-    idade: string;
     cpf: string;
     email: string;
     endereco: string;
@@ -14,7 +13,6 @@ export class Perfil{
 
     setData(objFirebase : any){
         this.cidade = objFirebase.cidade;
-        this.idade = objFirebase.idade;
         this.cpf = objFirebase.cpf;
         this.email = objFirebase.email;
         this.endereco = objFirebase.endereco;
