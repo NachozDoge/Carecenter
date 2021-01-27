@@ -21,7 +21,8 @@ ion-toolbar{
 }
 
 ion-card-subtitle{
-    font-size: 120%;
+    font-size: 140%;
+    margin-bottom: 10%;
 }
 
 ion-label{
@@ -30,6 +31,10 @@ ion-label{
    color:rgb(46, 46, 46);
    font-weight:bold;
    font-size: 80%;
+}
+
+form{
+    margin-bottom: 10%;
 }
 
 .userInfos{
@@ -70,10 +75,9 @@ ion-card-content{
 }
 
 ion-item{
-    width: 70%;
     height: auto;
     margin: 0 auto;
-   display: block;
+    display: block;
 }
 
 .cards{
@@ -95,9 +99,9 @@ ion-item{
     font-weight: bold;
 }
 
-.btnMarcar{
-    width: 35%;
-    margin-left: 35%;
+.btnProsseguir{
+    width: 50%;
+    margin-left: 28%;
     font-weight: bold;
 }
 
@@ -107,4 +111,17 @@ ion-item{
 
 .infoRowData{
     float:right;
+}
+
+.selecionar-text{
+    flex: 1 1 0%;
+    min-width: 16px;
+    font-size: inherit;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+ion-select {
+    position: static;
+    max-width: 100%;
 }

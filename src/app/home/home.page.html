@@ -19,7 +19,7 @@
   <div class="cards">
     
 
-  <ion-card button (click)="buttonClick()">
+  <ion-card [routerLink]="['/consultas-marcadas']">
     <ion-card-header>
       <ion-card-title>Consultas marcadas</ion-card-title>
     
@@ -27,7 +27,7 @@
   
     <ion-card-content>
 
-      Próxima consulta: Psicólogo 
+      Próxima consulta: Psicólogo
       <br>
       Método: No celular
       <br>
@@ -36,7 +36,7 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card button (click)="buttonClick()">
+  <ion-card [routerLink]="['/laudos-medicos']">
     <ion-card-header>
       <ion-card-title>Meus laudos médicos</ion-card-title>
     
