@@ -10,12 +10,14 @@ ion-avatar > img{
     top: 46px;
     left: calc(50% 50px);
 }
+
 ion-title{
     margin-left: 40%;
     img{
         height: 72px;
     }
 }
+
 ion-toolbar{
     background-color: transparent;
 }
@@ -111,14 +113,6 @@ ion-item{
 
 .infoRowData{
     float:right;
-}
-
-.selecionar-text{
-    flex: 1 1 0%;
-    min-width: 16px;
-    font-size: inherit;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
 ion-select {
