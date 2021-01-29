@@ -25,6 +25,7 @@ export class CadastrarMedicoPage implements OnInit {
 
   iniciarForm() {
     this.formGroup = this.formBuilder.group({
+      id: [],
       nome: [],
       dataesq: [],
       espc: [],

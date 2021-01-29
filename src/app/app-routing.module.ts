@@ -96,6 +96,14 @@ const routes: Routes = [
   {
     path: 'cadastrar-medico',
     loadChildren: () => import('./cadastrar-medico/cadastrar-medico.module').then( m => m.CadastrarMedicoPageModule)
+  },
+  {
+    path: 'medico-lista',
+    loadChildren: () => import('./medico-lista/medico-lista.module').then( m => m.MedicoListaPageModule)
+  },
+  {
+    path: 'medico-visualizar',
+    loadChildren: () => import('./medico-visualizar/medico-visualizar.module').then( m => m.MedicoVisualizarPageModule)
   }
 
 
