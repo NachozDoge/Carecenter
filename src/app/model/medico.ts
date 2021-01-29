@@ -17,6 +17,7 @@ export class Medico{
     setData(objFirebase : any){
         this.nome = objFirebase.nome;
         this.dataesq = objFirebase.dataesq;
+        this.espc = objFirebase.dataesq;
         this.cpf = objFirebase.cpf;
         this.endereco = objFirebase.endereco;
         this.numero = objFirebase.numero;

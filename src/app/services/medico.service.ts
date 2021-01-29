@@ -4,10 +4,7 @@ import { from, Observable } from 'rxjs';
 import { Medico } from '../model/medico';
 
 @Injectable()
-export class medicoService {
-    openstate(value: any) {
-      throw new Error('Method not implemented.');
-    }
+export class MedicoService {
     medico: Medico = new Medico();
 
     constructor(private firestore: AngularFirestore) {

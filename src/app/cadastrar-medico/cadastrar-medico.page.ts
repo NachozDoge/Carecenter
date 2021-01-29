@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { TemplateService } from '../service/template';
-import { medicoService } from '../services/medico.service';
+import { MedicoService } from '../services/medico.service';
 
 
 @Component({
@@ -15,7 +15,7 @@ export class CadastrarMedicoPage implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     private template: TemplateService,
-    private medicoServ: medicoService
+    private medicoServ: MedicoService
   ) {
     this.iniciarForm();
   }
