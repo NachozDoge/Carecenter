@@ -92,6 +92,10 @@ const routes: Routes = [
   },  {
     path: 'perfils-atualizar',
     loadChildren: () => import('./perfils-atualizar/perfils-atualizar.module').then( m => m.PerfilsAtualizarPageModule)
+  },
+  {
+    path: 'cadastrar-medico',
+    loadChildren: () => import('./cadastrar-medico/cadastrar-medico.module').then( m => m.CadastrarMedicoPageModule)
   }
 
 

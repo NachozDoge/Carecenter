@@ -22,6 +22,7 @@ import { ConsultaService } from './services/consulta.service';
 import { exameService } from './services/exame.service';
 import { PerfilsPageModule } from './perfils/perfils.module';
 import { PerfilsService } from './services/perfils.service';
+import { medicoService } from './services/medico.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -48,6 +49,7 @@ import { PerfilsService } from './services/perfils.service';
       PerfilsService,
       ConsultaService,
       exameService,
+      medicoService,
       
       { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
