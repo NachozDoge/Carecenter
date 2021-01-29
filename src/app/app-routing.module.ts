@@ -104,6 +104,10 @@ const routes: Routes = [
   {
     path: 'medico-visualizar',
     loadChildren: () => import('./medico-visualizar/medico-visualizar.module').then( m => m.MedicoVisualizarPageModule)
+  },
+  {
+    path: 'medico-atualizar',
+    loadChildren: () => import('./medico-atualizar/medico-atualizar.module').then( m => m.MedicoAtualizarPageModule)
   }
 
 
