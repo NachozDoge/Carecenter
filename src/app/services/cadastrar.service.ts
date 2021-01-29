@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { from, Observable } from 'rxjs';
-import { Perfil } from '../model/cadastrar';
+import { Cadastrar } from '../model/cadastrar';
 
 @Injectable()
-export class PerfilService {
-    perfil: Perfil = new Perfil();
+export class CadastrarService {
+    Cadastrar: Cadastrar = new Cadastrar();
 
     constructor(private firestore: AngularFirestore) {
 
     }
 
-    listaDePerfil(): Observable<any> {
+    listaDeCadastrar(): Observable<any> {
 
         // Observable -> Aguardar resposta do servidor
         return from(new Observable(observe => { // converter para Observable
@@ -21,10 +21,10 @@ export class PerfilService {
             // response -> dados baixados do servidor, os perfils
             this.firestore.collection('perfil').snapshotChanges().subscribe(response => {
                 // transformar response em array de perfils
-                let lista: Perfil[] = [];
+                let lista: Cadastrar[] = [];
                 response.map(obj => {
                     // será repetido para cada registro, cada registro do Firestore se chama obj
-                    let perfil: Perfil = new Perfil();
+                    let perfil: Cadastrar = new Cadastrar();
                     perfil.setData(obj.payload.doc.data());// obj.payload.doc.data() -> Dados do perfil
                     perfil.id = obj.payload.doc.id; // inserindo ID
                     lista.push(perfil); // adicionando o perfil na lista // push é adicionar
@@ -42,10 +42,10 @@ export class PerfilService {
         return from(new Observable(observe => { // converter para Observable
             this.firestore.collection('perfil').ref.orderBy("nome")
                 .startAt(nome).endAt(nome + "\uf8ff").get().then(response => {
-                    let lista: Perfil[] = [];
+                    let lista: Cadastrar[] = [];
                     response.docs.map(obj => {
                         // será repetido para cada registro, cada registro do Firestore se chama obj
-                        let perfil: Perfil = new Perfil();
+                        let perfil: Cadastrar = new Cadastrar();
                         perfil.setData(obj.data());// obj.payload.doc.data() -> Dados do perfil
                         perfil.id = obj.id; // inserindo ID
                         lista.push(perfil); // adicionando o perfil na lista // push é adicionar
@@ -91,7 +91,7 @@ export class PerfilService {
             // .doc(id).snapshotChanges() -> Busca pelo id do documento
             this.firestore.collection('perfil').doc(id).snapshotChanges().subscribe(response => {
                 console.log(response);
-                let perfil: Perfil = new Perfil();
+                let perfil: Cadastrar = new Cadastrar();
                 perfil.id = response.payload.id;
                 perfil.setData(response.payload.data());
                 observe.next(perfil);
@@ -135,7 +135,7 @@ export class PerfilService {
             this.firestore.collection('perfil').doc(uid).snapshotChanges().subscribe(response => {
                 if (response.payload.exists !== false) {
 
-                    let perfil: Perfil = new Perfil();
+                    let perfil: Cadastrar = new Cadastrar();
                     perfil.id = response.payload.id;
                     perfil.setData(response.payload.data());
                     observe.next(perfil);

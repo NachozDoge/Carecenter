@@ -1,33 +1,34 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { from, Observable } from 'rxjs';
-import { Perfil } from '../model/perfils';
+import { Perfil } from '../model/perfil';
 
 @Injectable()
-export class PerfilsService {
+export class PerfilService {
     perfil: Perfil = new Perfil();
 
     constructor(private firestore: AngularFirestore) {
 
     }
 
+
     listaDePerfil(): Observable<any> {
 
         // Observable -> Aguardar resposta do servidor
         return from(new Observable(observe => { // converter para Observable
 
-            // this.firestore.collection('cliente') -> Selecionar a coleção no Firestore
+            // this.firestore.collection('perfil') -> Selecionar a coleção no Firestore
             // .snapshotChanges().subscribe -> Tentar buscar no servidor
-            // response -> dados baixados do servidor, os clientes
+            // response -> dados baixados do servidor, os perfils
             this.firestore.collection('perfil').snapshotChanges().subscribe(response => {
-                // transformar response em array de clientes
+                // transformar response em array de perfils
                 let lista: Perfil[] = [];
                 response.map(obj => {
                     // será repetido para cada registro, cada registro do Firestore se chama obj
                     let perfil: Perfil = new Perfil();
-                    perfil.setData(obj.payload.doc.data());// obj.payload.doc.data() -> Dados do cliente
+                    perfil.setData(obj.payload.doc.data());// obj.payload.doc.data() -> Dados do perfil
                     perfil.id = obj.payload.doc.id; // inserindo ID
-                    lista.push(perfil); // adicionando o cliente na lista // push é adicionar
+                    lista.push(perfil); // adicionando o perfil na lista // push é adicionar
                 });
                 observe.next(lista);
             })
@@ -46,9 +47,9 @@ export class PerfilsService {
                     response.docs.map(obj => {
                         // será repetido para cada registro, cada registro do Firestore se chama obj
                         let perfil: Perfil = new Perfil();
-                        perfil.setData(obj.data());// obj.payload.doc.data() -> Dados do cliente
+                        perfil.setData(obj.data());// obj.payload.doc.data() -> Dados do perfil
                         perfil.id = obj.id; // inserindo ID
-                        lista.push(perfil); // adicionando o cliente na lista // push é adicionar
+                        lista.push(perfil); // adicionando o perfil na lista // push é adicionar
                     });
                     observe.next(lista);
                 })
@@ -56,10 +57,10 @@ export class PerfilsService {
         }))
     }
 
-    getPerfil(idUser) {
+    getperfil(idUser) {
         return from(new Observable(observe => { // converter para Observable
 
-            this.firestore.collection("perfil").doc(idUser).get().subscribe(response => { // .doc seleciona o cliente com base no id
+            this.firestore.collection("Perfil").doc(idUser).get().subscribe(response => { // .doc seleciona o perfil com base no id
 
                 if (response.exists == false) {
 
@@ -74,10 +75,10 @@ export class PerfilsService {
 
     //
 
-    cadastrar(cliente: any): Observable<any> {
+    cadastrar(perfil: any): Observable<any> {
         return from(new Observable(observe => {
             // add cria um novo documento
-            this.firestore.collection('cliente').add(cliente).then(response => {
+            this.firestore.collection('perfil').add(perfil).then(response => {
                 observe.next("Cadastrado com sucesso!");
             }, (err) => {
                 observe.error("Erro ao cadastrar!");
@@ -105,10 +106,10 @@ export class PerfilsService {
 
 
 
-    atualizar(cliente: any): Observable<any> {
+    atualizar(perfil: any): Observable<any> {
         return from(new Observable(observe => {
 
-            this.firestore.collection('cliente').doc(cliente.id).set(cliente).then(response => {
+            this.firestore.collection('perfil').doc(perfil.id).set(perfil).then(response => {
                 observe.next("Atualizado com sucesso!");
             }, (err) => {
                 observe.error("Erro ao atualizar!");
@@ -117,10 +118,10 @@ export class PerfilsService {
         }));
     }
 
-    excluir(cliente: any): Observable<any> {
+    excluir(perfil: any): Observable<any> {
         return from(new Observable(observe => {
 
-            this.firestore.collection('cliente').doc(cliente.id).delete().then(response => {
+            this.firestore.collection('perfil').doc(perfil.id).delete().then(response => {
                 observe.next("Excluído com sucesso!");
             }, (err) => {
                 observe.error("Erro ao excluir!");
@@ -129,16 +130,16 @@ export class PerfilsService {
         }));
     }
 
-    // carregar o perfil do cliente (qualquer coleção)
-    buscaPerfilPorId(uid: any): Observable<any> { // uid -> authenticator
+    // carregar o perfil do perfil (qualquer coleção)
+    buscaperfilPorId(uid: any): Observable<any> { // uid -> authenticator
         return from(new Observable(observe => {
             this.firestore.collection('perfil').doc(uid).snapshotChanges().subscribe(response => {
                 if (response.payload.exists !== false) {
 
-                    let cliente: Perfil = new Perfil();
-                    cliente.id = response.payload.id;
-                    cliente.setData(response.payload.data());
-                    observe.next(cliente);
+                    let perfil: Perfil = new Perfil();
+                    perfil.id = response.payload.id;
+                    perfil.setData(response.payload.data());
+                    observe.next(perfil);
                 }
 
             }, (err) => {
@@ -149,7 +150,7 @@ export class PerfilsService {
     }
 
     // Atualiza perfil, 
-    atualizaPerfil(uid, dados) {
+    atualizaperfil(uid, dados) {
         return from(new Observable(observe => {
 
             this.firestore.collection('perfil').doc(uid).set(dados).then(response => {

@@ -1,85 +1,47 @@
-import { Component, ViewChild } from "@angular/core";
-import { MenuController, NavController } from "@ionic/angular";
-import { Cliente } from "../model/cliente";
-import { ClienteService } from "../services/cliente.service";
-import { AngularFireAuth } from '@angular/fire/auth';
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { NavController } from '@ionic/angular';
+import { Perfil } from '../model/perfil';
+import { PerfilService } from '../services/perfil.service';
+
 @Component({
-  selector: "app-home",
-  templateUrl: "ficha-medica.page.html",
-  styleUrls: ["ficha-medica.page.scss"]
+  selector: 'app-ficha-medica',
+  templateUrl: './ficha-medica.page.html',
+  styleUrls: ['./ficha-medica.page.scss'],
 })
-export class FichaMedicaPage {
-  public items: any = []; 
-  @ViewChild("nome") cliente; 
-  formGroup: FormGroup;
-  perfil : Cliente = new Cliente(); 
+export class FichaMedicaPage implements OnInit {
 
-  lista :Cliente[] = [];
-  constructor(
-    private formBuilder : FormBuilder,
-    private menuCtrl : MenuController,
-    private clienteservic: ClienteService,
-    private navCtrl : NavController,
-    private auth : AngularFireAuth) {
+  @ViewChild("id") id; 
 
-      this.iniciarForm(); 
+  lista : Perfil[] = [];
 
-      this.auth.currentUser.then(response=>{ // auth.currentUser -> Obten dados do usuario
+  constructor(private perfilServ : PerfilService,
+    private navCtrl : NavController) { }
 
-        this.clienteservic.buscaPerfilPorId(response.uid).subscribe(response=>{
-          // se houver o perfil, colocar os dados para a variavel perfil
-          this.perfil = response; // dados preenchidos
-          this.iniciarForm(); // atualizar os dados do formulário
-        }
+  ngOnInit() {
+    this.perfilServ.listaDePerfil().subscribe(response=>{
+      // O servidor respondeu
+      
+      this.lista = response;
+     
 
-        )
-      })
-    
-    this.items = [
-      { expanded: false },
-      { expanded: false }
-    ];
-  }
-
-   iniciarForm() {
-    this.formGroup = this.formBuilder.group({
-      nome: [this.perfil.nome],
-      cpf: [this.perfil.cpf],
-      endereco: [this.perfil.endereco],
-      numero: [this.perfil.numero],
-      cidade: [this.perfil.cidade],
-      estado: [this.perfil.estado],
-      email: [this.perfil.email],
-      telefone: [this.perfil.telefone]
+      
+    },err=>{
+      // erro
     })
   }
 
-  expandItem(item): void {
-    if (item.expanded) {
-      item.expanded = false;
-    } else {
-      this.items.map(listItem => {
-        if (item == listItem) {
-          listItem.expanded = !listItem.expanded;
-        } else {
-          listItem.expanded = false;
-        }
-        return listItem;
-      });
-    }
+  visualizar(cliente){
+    this.navCtrl.navigateForward(['/clientes-visualizar',cliente.id])
+  }
+
+  pesquisar(){
+    console.log("Busca por: "+this.id.value)
+    this.perfilServ.buscaPorNome(this.id.value).subscribe(response=>{
+      this.lista = [];
+      this.lista = response;
+    });
   }
   
-  ngOnInit() {
-   
-  }
-
-  ionViewWillEnter() {
-    this.menuCtrl.enable(true);
-  }
-
-  visualizar(nome){
-    this.navCtrl.navigateForward(['/clientes-visualizar',nome.id])
-  }
 
 }

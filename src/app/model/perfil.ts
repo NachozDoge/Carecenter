@@ -1,27 +1,33 @@
 export class Perfil{
-
-    id : string;
-    cidade: string;
+    
+    id: string;
+    nome: string;
     idade: string;
     cpf: string;
-    email: string;
+    sangue: string;
     endereco: string;
-    estado: string;
-    nome: string;
     numero: string;
+    cidade: string;
+    estado: string;
+    email: string;
     telefone: string;
 
 
+
+
+
     setData(objFirebase : any){
-        this.cidade = objFirebase.cidade;
+        this.nome = objFirebase.nome;
         this.idade = objFirebase.idade;
         this.cpf = objFirebase.cpf;
-        this.email = objFirebase.email;
+        this.sangue = objFirebase.sangue;
         this.endereco = objFirebase.endereco;
-        this.nome = objFirebase.nome;
         this.numero = objFirebase.numero;
-        this.telefone = objFirebase.telefone;
+        this.cidade = objFirebase.cidade;
         this.estado = objFirebase.estado;
+        this.email = objFirebase.email;
+        this.telefone = objFirebase.telefone;
+        
     }
 
 }

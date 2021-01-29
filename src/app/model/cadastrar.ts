@@ -1,10 +1,11 @@
-export class Perfil{
+export class Cadastrar{
 
     id : string;
     cidade: string;
     idade: string;
     cpf: string;
     email: string;
+    sangue: string;
     endereco: string;
     estado: string;
     nome: string;
@@ -17,6 +18,7 @@ export class Perfil{
         this.idade = objFirebase.idade;
         this.cpf = objFirebase.cpf;
         this.email = objFirebase.email;
+        this.sangue = objFirebase.sangue;
         this.endereco = objFirebase.endereco;
         this.nome = objFirebase.nome;
         this.numero = objFirebase.numero;

@@ -67,31 +67,16 @@ const routes: Routes = [
     loadChildren: () => import('./consultas/consultas.module').then( m => m.ConsultasPageModule)
   },
   {
-    path: 'perfil',
-    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
-  },
-  {
     path: 'cadastrar-perfil',
     loadChildren: () => import('./cadastrar-perfil/cadastrar-perfil.module').then( m => m.CadastrarPerfilPageModule)
-  },
-  {
-    path: 'perfils',
-    loadChildren: () => import('./perfils/perfils.module').then( m => m.PerfilsPageModule)
   },
   {
     path: 'consultas-visualizar',
     loadChildren: () => import('./consultas-visualizar/consultas-visualizar.module').then( m => m.ConsultasVisualizarPageModule)
   },
   {
-    path: 'perfils-visualizar',
-    loadChildren: () => import('./perfils-visualizar/perfils-visualizar.module').then( m => m.PerfilsVisualizarPageModule)
-  },
-  {
     path: 'exame-visualizar',
     loadChildren: () => import('./exame-visualizar/exame-visualizar.module').then( m => m.ExameVisualizarPageModule)
-  },  {
-    path: 'perfils-atualizar',
-    loadChildren: () => import('./perfils-atualizar/perfils-atualizar.module').then( m => m.PerfilsAtualizarPageModule)
   },
   {
     path: 'cadastrar-medico',
@@ -108,7 +93,15 @@ const routes: Routes = [
   {
     path: 'medico-atualizar',
     loadChildren: () => import('./medico-atualizar/medico-atualizar.module').then( m => m.MedicoAtualizarPageModule)
+  },  {
+    path: 'perfil',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
+    path: 'perfil-visualizar',
+    loadChildren: () => import('./perfil-visualizar/perfil-visualizar.module').then( m => m.PerfilVisualizarPageModule)
   }
+
 
 
 

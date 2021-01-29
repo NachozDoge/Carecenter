@@ -15,14 +15,14 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from 'src/environments/environment'; 
 import { ClienteService } from './services/cliente.service';
-import { PerfilService } from './services/cadastrar.service';
+import { PerfilService } from './services/perfil.service';
 import { CadastrarPerfilPageModule } from './cadastrar-perfil/cadastrar-perfil.module';
 import { MarcarConsultaPageModule } from './marcar-consulta/marcar-consulta.module';
 import { ConsultaService } from './services/consulta.service';
 import { exameService } from './services/exame.service';
-import { PerfilsPageModule } from './perfils/perfils.module';
-import { PerfilsService } from './services/perfils.service';
 import { MedicoService } from './services/medico.service';
+import { PerfilPageModule } from './perfil/perfil.module';
+import { CadastrarService } from './services/cadastrar.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -37,7 +37,7 @@ import { MedicoService } from './services/medico.service';
     AngularFireStorageModule,
     CadastrarPerfilPageModule,
     MarcarConsultaPageModule,
-    PerfilsPageModule,
+    PerfilPageModule,
     FormsModule,
     ReactiveFormsModule,
     ], 
@@ -46,10 +46,10 @@ import { MedicoService } from './services/medico.service';
       SplashScreen,
       ClienteService,
       PerfilService,
-      PerfilsService,
       ConsultaService,
       exameService,
       MedicoService,
+      CadastrarService,
       
       { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

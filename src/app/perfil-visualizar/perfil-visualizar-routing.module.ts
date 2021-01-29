@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { PerfilsAtualizarPage } from './perfils-atualizar.page';
+import { PerfilVisualizarPage } from './perfil-visualizar.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: PerfilsAtualizarPage
+    component: PerfilVisualizarPage
   }
 ];
 
@@ -14,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class PerfilsAtualizarPageRoutingModule {}
+export class PerfilVisualizarPageRoutingModule {}

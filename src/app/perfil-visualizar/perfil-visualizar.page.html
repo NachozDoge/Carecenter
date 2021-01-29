@@ -7,15 +7,9 @@
     <ion-icon name="chevron-back-outline"></ion-icon>
   </ion-button>
 
-  <div class="ion-header">
-    <ion-avatar >
-      <img src="/assets/imgs/usuario.png" >
-    </ion-avatar>
-  </div>
-
   <ion-card>
     <ion-item>
-      <ion-label position="floating">Nome</ion-label>
+      <ion-label position="floating">Especialista</ion-label>
       <ion-input disabled="true" value="{{perfil.nome}}"></ion-input>
     </ion-item>
 
@@ -24,16 +18,22 @@
       <ion-input disabled="true" value="{{perfil.idade}}"></ion-input>
     </ion-item>
 
-
     <ion-item>
-      <ion-label position="floating">Cpf</ion-label>
+      <ion-label position="floating">CPF</ion-label>
       <ion-input disabled="true" value="{{perfil.cpf}}"></ion-input>
     </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Tipo Sanguíneo</ion-label>
+      <ion-input disabled="true" value="{{perfil.sangue}}"></ion-input>
+    </ion-item>
+
 
     <ion-item>
       <ion-label position="floating">Endereço</ion-label>
       <ion-input disabled="true" value="{{perfil.endereco}}"></ion-input>
     </ion-item>
+
 
     <ion-item>
       <ion-label position="floating">Número</ion-label>
@@ -60,8 +60,11 @@
       <ion-input disabled="true" value="{{perfil.telefone}}"></ion-input>
     </ion-item>
 
-    <ion-button (click)="atualizar()" color="dark" expand="full">Atualizar</ion-button>
 
+    <ion-item>
+      <ion-label position="floating">Feita por:</ion-label>
+      <ion-input disabled="true" value="Mateus"></ion-input>
+    </ion-item>
   </ion-card>
 
 </ion-content>

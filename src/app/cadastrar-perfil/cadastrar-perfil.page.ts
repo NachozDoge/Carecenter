@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { PerfilService } from '../services/cadastrar.service';
+import { CadastrarService } from '../services/cadastrar.service';
 import { TemplateService } from '../services/template.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class CadastrarPerfilPage implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     private template: TemplateService,
-    private perfilServ: PerfilService
+    private cadastrarServ: CadastrarService
   ) {
     this.iniciarForm();
   }
@@ -27,6 +27,7 @@ export class CadastrarPerfilPage implements OnInit {
       nome: [],
       idade: [],
       cpf: [],
+      sangue: [],
       endereco: [],
       numero: [],
       cidade: [],
@@ -41,7 +42,7 @@ export class CadastrarPerfilPage implements OnInit {
 
       load.present();
 
-      this.perfilServ.cadastrar(this.formGroup.value).subscribe(response => {
+      this.cadastrarServ.cadastrar(this.formGroup.value).subscribe(response => {
         console.log("OK");
         load.dismiss();
         this.template.myAlert(response);
