@@ -14,6 +14,7 @@ export class FichaMedicaPage implements OnInit {
   @ViewChild("id") id; 
 
   lista : Perfil[] = [];
+  perfil: any;
 
   constructor(private perfilServ : PerfilService,
     private navCtrl : NavController) { }
@@ -31,8 +32,11 @@ export class FichaMedicaPage implements OnInit {
     })
   }
 
-  visualizar(cliente){
-    this.navCtrl.navigateForward(['/clientes-visualizar',cliente.id])
+  visualizar(perfil){
+    this.navCtrl.navigateForward(['/clientes-visualizar',perfil.id])
+  }
+  atualizar(){
+    this.navCtrl.navigateForward(['/ficha-atualizar',this.perfil.id]);
   }
 
   pesquisar(){
