@@ -5,10 +5,7 @@ import { Exame } from '../model/exame';
 
 @Injectable()
 export class exameService {
-    openstate(value: any) {
-      throw new Error('Method not implemented.');
-    }
-    exame: Exame = new Exame();
+        exame: Exame = new Exame();
 
     constructor(private firestore: AngularFirestore) {
 

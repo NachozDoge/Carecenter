@@ -1,10 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MenuController, NavController } from '@ionic/angular';
-
+import { ActivatedRoute } from '@angular/router';
+import { NavController } from '@ionic/angular';
 import { Exame } from '../model/exame';
-
 import { exameService } from '../services/exame.service';
-
 @Component({
   selector: 'app-exames-marcados',
   templateUrl: './exames-marcados.page.html',
@@ -12,18 +10,15 @@ import { exameService } from '../services/exame.service';
 })
 export class ExamesMarcadosPage implements OnInit {
 
-  @ViewChild("exame") exame; 
+  @ViewChild("nome") nome; 
 
   lista : Exame[] = [];
 
-  constructor(
-    private menuCtrl : MenuController,
-    private exameservice : exameService,
-    private navCtrl : NavController
-  ) { }
+  constructor(private exameServ : exameService,
+    private navCtrl : NavController) { }
 
   ngOnInit() {
-    this.exameservice.listaDeExame().subscribe(response=>{
+    this.exameServ.listaDeExame().subscribe(response=>{
       // O servidor respondeu
       
       this.lista = response;
@@ -35,20 +30,17 @@ export class ExamesMarcadosPage implements OnInit {
     })
   }
 
-  ionViewWillEnter() {
-    this.menuCtrl.enable(true);
-  }
-
-  visualizar(exame){
-    this.navCtrl.navigateForward(['/exame-visualizar',exame.id])
+  visualizar(sangue){
+    this.navCtrl.navigateForward(['/exame-visualizar',sangue])
   }
 
   pesquisar(){
-    console.log("Busca por: "+this.exame.value)
-    this.exameservice.buscaPorNome(this.exame.value).subscribe(response=>{
+    console.log("Busca por: "+this.nome.value)
+    this.exameServ.buscaPorNome(this.nome.value).subscribe(response=>{
       this.lista = [];
       this.lista = response;
     });
   }
+  
 
 }
