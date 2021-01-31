@@ -10,15 +10,15 @@ ion-avatar > img{
     top: 46px;
     left: calc(50% 50px);
 }
-ion-title{
-    margin-left: 40%;
-    img{
-        height: 72px;
-    }
-}
+
 ion-toolbar{
     background-color: transparent;
-    
+    img{
+        width: 65px;
+        height: 50px;
+        margin-right: 5px;
+        float: right;
+    }
 }
 
 ion-label{
@@ -36,10 +36,6 @@ ion-card-title{
 ion-card-subtitle{
     font-size: 140%;
     margin-bottom: 10%;
-}
-
-ion-card{
-    width: 90%;
 }
 
 ion-item{

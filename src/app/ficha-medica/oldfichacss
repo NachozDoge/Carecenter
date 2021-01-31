@@ -10,32 +10,22 @@ ion-avatar > img{
     top: 46px;
     left: calc(50% 50px);
 }
-
-ion-toolbar{
-    background-color: transparent;
+ion-title{
+    margin-left: 40%;
     img{
-        width: 65px;
-        height: 50px;
-        margin-right: 5px;
-        float: right;
+        height: 72px;
     }
 }
-
-ion-card-subtitle{
-    font-size: 140%;
-    margin-bottom: 10%;
+ion-toolbar{
+    background-color: transparent;
+    
 }
 
 ion-label{
-   margin-left:5%;
+   margin-left:8.5%;
    margin-top:2%;
    color:rgb(46, 46, 46);
-   font-weight:bold;
-   font-size: 80%;
-}
-
-form{
-    margin-bottom: 10%;
+   font-weight: bold;
 }
 
 .userInfos{
@@ -53,10 +43,6 @@ ion-card-title{
     margin-left:8%;
 }
 
-ion-card-content{
-    margin-right: 15%;
-}
-
 .ion-header{
     margin-top: -15px;
     height: 25%;
@@ -68,13 +54,20 @@ ion-card-content{
 
 .separador{
     margin-top: 10%;
-    color:rgb(46, 46, 46);
+}
+
+.btnProsseguir{
+    width: 65%;
+    margin-left: 21%;
+    font-weight: bold;
 }
 
 ion-item{
+    width: 70%;
     height: auto;
     margin: 0 auto;
-    display: block;
+   display: block;
+  
 }
 
 .cards{
@@ -96,21 +89,10 @@ ion-item{
     font-weight: bold;
 }
 
-.btnProsseguir{
-    width: 50%;
-    margin-left: 28%;
-    font-weight: bold;
-}
-
 .infosRow{
     margin-bottom: 9%;
 }
 
 .infoRowData{
     float:right;
-}
-
-ion-select {
-    position: static;
-    max-width: 100%;
 }

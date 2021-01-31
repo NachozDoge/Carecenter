@@ -7,30 +7,25 @@
     <ion-icon name="chevron-back-outline"></ion-icon>
   </ion-button>
 
-  <div class="ion-header">
-    <ion-avatar >
-      <img src="/assets/imgs/usuario.png" >
-    </ion-avatar>
-  </div>
-
-  <ion-card>
-    <ion-item>
-      <ion-label position="floating">Nome</ion-label>
+  <ion-card style="border-radius: 15px;">
+    <ion-item style="margin-top: 10%;">
+      <ion-label>Exame:</ion-label>
       <ion-input disabled="true" value="{{exame.sangue}}"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Idade</ion-label>
-      <ion-input disabled="true" value="{{exame.medico}}"></ion-input>
-    </ion-item>
-    
-    <ion-item>
-      <ion-label position="floating">Cidade</ion-label>
+      <ion-label>Cidade:</ion-label>
       <ion-input disabled="true" value="{{exame.cidade}}"></ion-input>
     </ion-item>
 
-    <ion-button (click)="atualizar()" expand="full">Atualizar</ion-button>
+    <ion-item>
+      <ion-label>Especialista:</ion-label>
+      <ion-input disabled="true" value="{{exame.medico}}"></ion-input>
+    </ion-item>
 
+    <ion-button color="dark" (click)="atualizar()" expand="full" shape="round" style="width: 50%;margin:0 auto;margin-top: 10%;margin-bottom: 5%;">
+      Atualizar</ion-button>
+    <div class="separador"></div>
   </ion-card>
 
 </ion-content>

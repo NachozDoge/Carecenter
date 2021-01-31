@@ -9,21 +9,16 @@ ion-avatar > img{
     display: block;
     top: 12px;
     left: calc(50% 50px);
-    
-
 }
-ion-title{
-    margin-left: 40%;
 
-    img{
-        height: 72px;
-    }
-
-    
-}
 ion-toolbar{
     background-color: transparent;
-    
+    img{
+        width: 65px;
+        height: 50px;
+        margin-right: 5px;
+        float: right;
+    }
 }
 
 ion-label{
@@ -32,6 +27,15 @@ ion-label{
    margin-left: 25%;
         
 }
+
+ion-item{
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+   display: block;
+  
+}
+
 .ion-header{
     margin-top: -15px;
     height: 15%;
@@ -44,13 +48,10 @@ ion-label{
     }
 }
 
-ion-item{
-    width: 70%;
-    height: auto;
-    margin: 0 auto;
-   display: block;
-  
+.avatardiv{
+    margin-bottom: 20%;
 }
+
 .cards{
     margin-top:25%;
 }
