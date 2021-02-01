@@ -3,71 +3,72 @@
 
 <ion-content color="primary">
 
-  <ion-button class="btnVoltar" fill="clear" size="big" color="dark" onClick="history.go(-1)">
-    <ion-icon name="chevron-back-outline"></ion-icon>
-  </ion-button>
-
   <div class="ion-header">
-    <ion-avatar >
+    <ion-button class="btnVoltar" fill="clear" size="big" color="dark" onClick="history.go(-1)">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-button>
+    <ion-avatar>
       <img src="/assets/imgs/usuario.png" >
     </ion-avatar>
   </div>
 
-  <ion-card>
+  <ion-card style="border-radius: 15px;">
     <ion-item>
-      <ion-label position="floating">Nome</ion-label>
+      <ion-label>Nome</ion-label>
       <ion-input disabled="true" value="{{medico.nome}}"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Data de Nascimento</ion-label>
-      <ion-input disabled="true" value="{{medico.dataesq}}"></ion-input>
-    </ion-item>
-
-
-    <ion-item>
-      <ion-label position="floating">Especialidade</ion-label>
+      <ion-label>Especialidade</ion-label>
       <ion-input disabled="true" value="{{medico.espc}}"></ion-input>
     </ion-item>
 
 
     <ion-item>
-      <ion-label position="floating">CPF</ion-label>
+      <ion-label>CPF</ion-label>
       <ion-input disabled="true" value="{{medico.cpf}}"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Endereço</ion-label>
+      <ion-label>Endereço</ion-label>
       <ion-input disabled="true" value="{{medico.endereco}}"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Número</ion-label>
+      <ion-label>Número</ion-label>
       <ion-input disabled="true" value="{{medico.numero}}"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Cidade</ion-label>
+      <ion-label>Cidade</ion-label>
       <ion-input disabled="true" value="{{medico.cidade}}"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Estado</ion-label>
+      <ion-label>Estado</ion-label>
       <ion-input disabled="true" value="{{medico.estado}}"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">E-mail</ion-label>
+      <ion-label>Telefone</ion-label>
+      <ion-input disabled="true" value="{{medico.telefone}}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>E-mail</ion-label>
       <ion-input disabled="true" value="{{medico.email}}"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="floating">Telefone</ion-label>
-      <ion-input disabled="true" value="{{medico.telefone}}"></ion-input>
+      <ion-label>Data de Nascimento</ion-label>
+      <ion-input disabled="true" value="{{medico.dataesq}}"></ion-input>
     </ion-item>
 
-    <ion-button (click)="atualizar()" color="dark" expand="full">Atualizar</ion-button>
-
+    <ion-button color="dark" (click)="atualizar()" expand="full" shape="round" style="width: 50%;margin:0 auto;margin-top: 10%;margin-bottom: 5%;">
+      Atualizar</ion-button>
+    <div class="separador"></div>
+    
   </ion-card>
 
 </ion-content>
+
