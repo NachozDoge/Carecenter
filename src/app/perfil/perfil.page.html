@@ -22,13 +22,14 @@
                 <form class="searchbar">
                   <ion-searchbar #nome></ion-searchbar>
                 </form>
-                <ion-button shape="round" color="dark" class="btnSearchbar" (click)="pesquisar()">Pesquisar</ion-button>
+                <ion-button shape="round" color="dark" class="btnSearchbar" (click)="pesquisar()" style="margin-right: 1.7em;">
+                  Pesquisar</ion-button>
               </div>
 
-              <ion-list>
+              <ion-list style="margin-top: 1em;">
                 <ion-item *ngFor="let perfil of lista">
                   <ion-label>{{perfil.nome}}</ion-label>
-                  <ion-button color="dark" (click)="visualizar(perfil)">Ver</ion-button>
+                  <ion-button color="dark" (click)="visualizar(perfil)" shape="round">Ver</ion-button>
                 </ion-item>
               </ion-list>
             </div>
