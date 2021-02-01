@@ -20,7 +20,12 @@
             <div class="card-content">
               <div class="SBar">
                 <form class="searchbar">
-                  <ion-searchbar #nome></ion-searchbar>
+                 
+                  <ion-select #nome value="especialidade">
+                    <ion-select-option value="Fisioterapeuta">Fisioterapeuta</ion-select-option>
+                    <ion-select-option value="Nutricionista">Nutricionista</ion-select-option>
+                    <ion-select-option value="Neuro">Neuro</ion-select-option>
+                  </ion-select>
                 </form>
                 <ion-button shape="round" color="dark" class="btnSearchbar" (click)="pesquisar()">Pesquisar</ion-button>
               </div>
@@ -29,6 +34,7 @@
                 <ion-item *ngFor="let medico of lista">
                   <ion-label>{{medico.nome}}</ion-label>
                   <ion-button color="dark" (click)="visualizar(medico)">Ver</ion-button>
+                  <ion-button color="dark" (click)="agendar(medico)">Agendar</ion-button>
                 </ion-item>
               </ion-list>
             </div>

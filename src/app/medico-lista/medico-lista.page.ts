@@ -34,9 +34,13 @@ export class MedicoListaPage implements OnInit {
     this.navCtrl.navigateForward(['/medico-visualizar',id])
   }
 
+  agendar(){
+    this.navCtrl.navigateForward(['/agendar-exame'])
+  }
+
   pesquisar(){
     console.log("Busca por: "+this.nome.value)
-    this.medicoServ.buscaPorNome(this.nome.value).subscribe(response=>{
+    this.medicoServ.buscaPorEspecialidade(this.nome.value).subscribe(response=>{
       this.lista = [];
       this.lista = response;
     });

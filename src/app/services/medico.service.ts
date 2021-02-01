@@ -57,6 +57,28 @@ export class MedicoService {
         }))
     }
 
+    
+    buscaPorEspecialidade(nome: string): Observable<any> {
+
+        // Observable -> Aguardar resposta do servidor
+        return from(new Observable(observe => { // converter para Observable
+            this.firestore.collection('medico').ref.where("espc","==",nome)
+                    .get().then(response => {
+                    let lista: Medico[] = [];
+                    response.docs.map(obj => {
+                        // será repetido para cada registro, cada registro do Firestore se chama obj
+                        let medico: Medico = new Medico();
+                        medico.setData(obj.data());// obj.payload.doc.data() -> Dados do medico
+                        console.log(obj.data())
+                        medico.id = obj.id; // inserindo ID
+                        lista.push(medico); // adicionando o medico na lista // push é adicionar
+                    });
+                    observe.next(lista);
+                })
+
+        }))
+    }
+
     getmedico(idUser) {
         return from(new Observable(observe => { // converter para Observable
 
