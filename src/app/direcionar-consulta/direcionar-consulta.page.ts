@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { NavController } from '@ionic/angular';
 import { Medico } from '../model/medico';
 import { MedicoService } from '../services/medico.service';
@@ -11,33 +12,28 @@ import { MedicoService } from '../services/medico.service';
 })
 export class DirecionarConsultaPage implements OnInit {
 
- 
+  formGroup: FormGroup;
+
   medico : Medico = new Medico();
 
-  constructor(private medicoServ : MedicoService,
+  constructor(private formBuilder: FormBuilder,
+    private medicoServ : MedicoService,
     private route: ActivatedRoute,
-    private navCtrl : NavController) { }
+    private navCtrl : NavController,
+    ) {
+      this.iniciarForm();
+     }
 
   ngOnInit() {
 
-    this.route.paramMap.subscribe(url=>{
-      let id = url.get('id');
-      
-      this.medicoServ.buscaPorId(id).subscribe(response=>{
-        this.medico = response;
-        
+    }
+
+
+    iniciarForm() {
+      this.formGroup = this.formBuilder.group({
+        cidade: [],
+        data: [],
+        metodo: [],
       })
-
-    })
-
+    }
   }
-
-  atualizar(){
-    this.navCtrl.navigateForward(['/medico-atualizar',this.medico.id]);
-  }
-
-  excluir(){
-    this.navCtrl.navigateForward(['/medico-excluir',this.medico.id]);
-  }
-
-}

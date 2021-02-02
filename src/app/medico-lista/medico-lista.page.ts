@@ -13,7 +13,6 @@ export class MedicoListaPage implements OnInit {
 
   lista : Medico[] = [];
 
-
   constructor(private medicoServ : MedicoService,
     private navCtrl : NavController) { }
 
@@ -45,6 +44,5 @@ export class MedicoListaPage implements OnInit {
       this.lista = response;
     });
   }
-  
 
 }
