@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>  
+    <img src="/assets/imgs/carecenterlogo.png">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+  
+<ion-content color='primary'> 
+    <div class="ion-left"></div>
+  
+  <ion-card>
+    <ion-card-header>
+      <center><ion-card-subtitle>Marcar Consulta</ion-card-subtitle></center>
+
+        <form [formGroup]="formGroup">
+      
+          <ion-card style="border-radius: 15px;">
+            <ion-item>
+              <ion-label>Nome</ion-label>
+              <ion-input disabled="true" value="{{medico.nome}}"></ion-input>
+            </ion-item>
+        
+            <ion-item>
+              <ion-label>Especialidade</ion-label>
+              <ion-input disabled="true" value="{{medico.espc}}"></ion-input>
+            </ion-item>
+        
+        
+            <ion-button color="dark" (click)="atualizar()" expand="full" shape="round" style="width: 50%;margin:0 auto;margin-top: 10%;margin-bottom: 5%;">
+              Atualizar</ion-button>
+            <div class="separador"></div>
+            
+          </ion-card>
+      
+          
+      </form>

@@ -1,17 +1,19 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { NavigationOptions } from '@ionic/angular/providers/nav-controller';
 import { Medico } from '../model/medico';
 import { MedicoService } from '../services/medico.service';
 @Component({
-  selector: 'app-medico-lista',
-  templateUrl: './medico-lista.page.html',
-  styleUrls: ['./medico-lista.page.scss'],
+  selector: 'app-medico-cliente',
+  templateUrl: './medico-cliente.page.html',
+  styleUrls: ['./medico-cliente.page.scss'],
 })
-export class MedicoListaPage implements OnInit {
+export class MedicoClientePage implements OnInit {
   
   @ViewChild("nome") nome; 
 
   lista : Medico[] = [];
+  espc: any;
 
 
   constructor(private medicoServ : MedicoService,
@@ -34,8 +36,8 @@ export class MedicoListaPage implements OnInit {
     this.navCtrl.navigateForward(['/medico-visualizar',id])
   }
 
-  agendar(nome){
-    this.navCtrl.navigateForward(['/marcar-consulta',nome.espc])
+  agendar(){
+    this.navCtrl.navigateForward(['/marcar-consulta'])
   }
 
   pesquisar(){

@@ -100,6 +100,14 @@ const routes: Routes = [
   {
     path: 'perfil-visualizar',
     loadChildren: () => import('./perfil-visualizar/perfil-visualizar.module').then( m => m.PerfilVisualizarPageModule)
+  },
+  {
+    path: 'medico-cliente',
+    loadChildren: () => import('./medico-cliente/medico-cliente.module').then( m => m.MedicoClientePageModule)
+  },
+  {
+    path: 'direcionar-consulta',
+    loadChildren: () => import('./direcionar-consulta/direcionar-consulta.module').then( m => m.DirecionarConsultaPageModule)
   }
 
 
