@@ -10,51 +10,59 @@
 <ion-content color='primary'> 
     <div class="ion-left"></div>
   
-  <ion-card>
+  <ion-card style="border-radius: 15px;">
     <ion-card-header>
-      <center><ion-card-subtitle>Marcar Consulta</ion-card-subtitle></center>
+      <center><ion-card-subtitle style="font-weight: bold;">Marcar Consulta</ion-card-subtitle></center>
+    </ion-card-header>
+    <ion-card-content>
+     
+        <ion-list>
+        <ion-item style="margin-top: 10%;">
+          <ion-label>Nome:</ion-label>
+          <ion-input disabled="true" value="{{medico.nome}}"></ion-input>
+        </ion-item>
+      </ion-list>
 
-        <form [formGroup]="formGroup">
-      
-          <ion-list>
-            <ion-item>
-              <ion-label>Especialista</ion-label>
-              <ion-select value="especialidade">
-                <ion-select-option value="f">Fisioterapeuta</ion-select-option>
-                <ion-select-option value="n">Nutricionista</ion-select-option>
-              </ion-select>
-            </ion-item>
-          </ion-list>
+      <ion-list>
+        <ion-item>
+          <ion-label>Especialidade:</ion-label> 
+          <ion-input disabled="true" value="{{medico.espc}}"></ion-input>
+        </ion-item>
+      </ion-list>
+ <form [formGroup]="formGroup">
+        <ion-list>
+          <ion-item>
+            <ion-label>Cidade</ion-label>
+              <ion-select value="bairro">
+              <ion-select-option value="c">Campo Grande</ion-select-option>
+              <ion-select-option value="s">Seropédica</ion-select-option>
+              <ion-select-option value="b">Bangu</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
 
-          <ion-list>
-            <ion-item>
-              <ion-label>Médico</ion-label>
-              <ion-select value="especialidade">
-                <ion-select-option value="m">Dr.Fábio</ion-select-option>
-                <ion-select-option value="f">Dra. Fabíola</ion-select-option>
-              </ion-select>
-            </ion-item>
-          </ion-list>
-            
-          <ion-list>
-            <ion-item>
-              <ion-label>Data</ion-label>
-              <ion-datetime value="1990-02-19" placeholder="Select Date"></ion-datetime>
-            </ion-item>
-          </ion-list>
-
-          <ion-list>
-            <ion-item>
-              <ion-label>Metódo</ion-label>
-              <ion-select value="dog">
-                <ion-select-option value="cat">Online</ion-select-option>
-                <ion-select-option value="dog">Chat</ion-select-option>
-              </ion-select>
-            </ion-item>
-          </ion-list>
-          
-      </form>
-
-        <ion-button class="btnProsseguir" shape="round" size="medium" color="dark" expand="block"
-        (click)="cadastrar()">Marcar</ion-button>
+        <ion-list>
+          <ion-item>
+            <ion-label>Data</ion-label>
+            <ion-datetime value="1990-02-19" placeholder="Select Date"></ion-datetime>
+          </ion-item>
+        </ion-list>
+  
+        <ion-list>
+          <ion-item>
+            <ion-label>Metódo</ion-label>
+            <ion-select value="metodo">
+              <ion-select-option value="online">Online</ion-select-option>
+              <ion-select-option value="chat">Chat</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
         
+        <ion-button color="dark" (click)="atualizar()" expand="full" shape="round" style="width: 50%;margin:0 auto;margin-top: 10%;margin-bottom: 5%;">
+          Marcar</ion-button>
+        <div class="separador"></div>
+
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content> 

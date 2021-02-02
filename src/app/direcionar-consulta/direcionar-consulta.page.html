@@ -15,17 +15,21 @@
       <center><ion-card-subtitle style="font-weight: bold;">Marcar Consulta</ion-card-subtitle></center>
     </ion-card-header>
     <ion-card-content>
-      <form [formGroup]="formGroup">
-        <ion-item>
-          <ion-label>Nome</ion-label>
+     
+        <ion-list>
+        <ion-item style="margin-top: 10%;">
+          <ion-label>Nome:</ion-label>
           <ion-input disabled="true" value="{{medico.nome}}"></ion-input>
         </ion-item>
-        
+      </ion-list>
+
+      <ion-list>
         <ion-item>
-          <ion-label>Especialidade</ion-label>
+          <ion-label>Especialidade:</ion-label> 
           <ion-input disabled="true" value="{{medico.espc}}"></ion-input>
         </ion-item>
-        
+      </ion-list>
+ <form [formGroup]="formGroup">
         <ion-list>
           <ion-item>
             <ion-label>Cidade</ion-label>

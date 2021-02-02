@@ -23,15 +23,22 @@ export class DirecionarConsultaPage implements OnInit {
     ) {
       this.iniciarForm();
      }
+     ngOnInit() {
 
-  ngOnInit() {
-
+      this.route.paramMap.subscribe(url=>{
+        let id = url.get('id');
+        
+        this.medicoServ.buscaPorId(id).subscribe(response=>{
+          this.medico = response;
+          
+        })
+  
+      })
+  
     }
-
-
     iniciarForm() {
       this.formGroup = this.formBuilder.group({
-        cidade: [],
+        nome: [],
         data: [],
         metodo: [],
       })
