@@ -37,7 +37,7 @@ export class MedicoClientePage implements OnInit {
   }
 
   agendar(id){
-    this.navCtrl.navigateForward(['/marcar-consulta',id])
+    this.navCtrl.navigateForward(['/direcionar-consulta',id])
   }
 
   pesquisar(){

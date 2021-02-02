@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { NavController } from '@ionic/angular';
-import { Medico } from '../model/medico';
-import { MedicoService } from '../services/medico.service';
+import { ConsultaService } from '../services/consulta.service';
+import { TemplateService } from '../services/template.service';
 
 @Component({
   selector: 'app-marcar-consulta',
@@ -14,33 +13,41 @@ export class MarcarConsultaPage implements OnInit {
 
   formGroup: FormGroup;
 
-  medico : Medico = new Medico();
-
   constructor(private formBuilder: FormBuilder,
-    private medicoServ : MedicoService,
-    private route: ActivatedRoute,
-    private navCtrl : NavController,
-    ) {
-      this.iniciarForm();
-     }
-     ngOnInit() {
-
-      this.route.paramMap.subscribe(url=>{
-        let id = url.get('id');
-        
-        this.medicoServ.buscaPorId(id).subscribe(response=>{
-          this.medico = response;
-          
-        })
-  
-      })
-  
-    }
-    iniciarForm() {
-      this.formGroup = this.formBuilder.group({
-        nome: [],
-        data: [],
-        metodo: [],
-      })
-    }
+    private template: TemplateService,
+    private marcarServ: ConsultaService,
+  ) {
+    this.iniciarForm();
   }
+
+  ngOnInit() {
+  }
+
+  iniciarForm() {
+    this.formGroup = this.formBuilder.group({
+      nome: [],
+      medico: [],
+      cidade: [],
+      data: [],
+      metodo: [],
+    })
+  }
+
+  cadastrar() {
+    this.template.loading.then(load => {
+
+      load.present();
+
+      this.marcarServ.cadastrar(this.formGroup.value).subscribe(response => {
+        console.log("OK");
+        load.dismiss();
+        this.template.myAlert(response);
+      }, () => {
+        console.log("Erro");
+        load.dismiss();
+        this.template.myAlert("Erro ao Cadastrar");
+      })
+
+    })
+  }
+}

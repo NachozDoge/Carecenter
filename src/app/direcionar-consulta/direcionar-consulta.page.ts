@@ -15,7 +15,7 @@ export class DirecionarConsultaPage implements OnInit {
   formGroup: FormGroup;
 
   medico : Medico = new Medico();
-
+  
   constructor(private formBuilder: FormBuilder,
     private medicoServ : MedicoService,
     private route: ActivatedRoute,
@@ -44,3 +44,6 @@ export class DirecionarConsultaPage implements OnInit {
       })
     }
   }
+
+  
+  
