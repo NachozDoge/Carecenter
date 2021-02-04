@@ -1,6 +1,7 @@
 export class Cadastrar{
 
     id : string;
+    foto: string;
     cidade: string;
     idade: string;
     cpf: string;
@@ -15,6 +16,7 @@ export class Cadastrar{
 
     setData(objFirebase : any){
         this.cidade = objFirebase.cidade;
+        this.foto = objFirebase.foto;
         this.idade = objFirebase.idade;
         this.cpf = objFirebase.cpf;
         this.email = objFirebase.email;

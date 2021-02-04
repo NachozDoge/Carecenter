@@ -24,6 +24,7 @@ export class CadastrarPerfilPage implements OnInit {
 
   iniciarForm() {
     this.formGroup = this.formBuilder.group({
+      foto: [],
       nome: [],
       idade: [],
       cpf: [],

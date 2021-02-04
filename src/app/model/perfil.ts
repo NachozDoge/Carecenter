@@ -1,6 +1,7 @@
 export class Perfil{
     
     id: string;
+    foto:string;
     nome: string;
     idade: string;
     cpf: string;
@@ -17,6 +18,7 @@ export class Perfil{
 
 
     setData(objFirebase : any){
+        this.foto = objFirebase.foto;
         this.nome = objFirebase.nome;
         this.idade = objFirebase.idade;
         this.cpf = objFirebase.cpf;
