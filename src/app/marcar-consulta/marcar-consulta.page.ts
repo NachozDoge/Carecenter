@@ -25,11 +25,14 @@ export class MarcarConsultaPage implements OnInit {
 
   iniciarForm() {
     this.formGroup = this.formBuilder.group({
-      nome: [],
-      medico: [],
-      cidade: [],
-      data: [],
+      idcliente: [],
+      idmedico: [],
+      nomecliente: [],
+      nomemedico: [],
       metodo: [],
+      dataconsulta: [],
+      especialidade: [],
+     
     })
   }
 

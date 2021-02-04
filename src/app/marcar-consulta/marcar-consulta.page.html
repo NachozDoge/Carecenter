@@ -25,9 +25,8 @@
             <ion-select-option value="Neuro">Neuro</ion-select-option>
           </ion-select>
         </ion-item>
-      </ion-list>
 
-      <ion-list>
+    
         <ion-item>
           <ion-label>Médico</ion-label>
           <ion-select value="especialidade">
@@ -35,29 +34,15 @@
             <ion-select-option value="Feminino">Dra. Fabíola</ion-select-option>
           </ion-select>
         </ion-item>
-      </ion-list>
-        <ion-list>
-          <ion-item>
-            <ion-label>Cidade</ion-label>
-              <ion-select value="bairro">
-              <ion-select-option value="c">Campo Grande</ion-select-option>
-              <ion-select-option value="s">Seropédica</ion-select-option>
-              <ion-select-option value="b">Bangu</ion-select-option>
-            </ion-select>
-          </ion-item>
-        </ion-list>
-
-        <ion-list>
+    
           <ion-item>
             <ion-label>Data</ion-label>
-            <ion-datetime value="1990-02-19" placeholder="Select Date"></ion-datetime>
+            <ion-datetime formControlName="dataconsulta" placeholder="Select Date"></ion-datetime>
           </ion-item>
-        </ion-list>
-  
-        <ion-list>
+        
           <ion-item>
             <ion-label>Metódo</ion-label>
-            <ion-select value="metodo">
+            <ion-select formControlName="metodo">
               <ion-select-option value="online">Online</ion-select-option>
               <ion-select-option value="chat">Chat</ion-select-option>
             </ion-select>
