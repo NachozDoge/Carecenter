@@ -18,30 +18,47 @@
 
       <form [formGroup]="formGroup">
       
-        <ion-list>
+
+      
+        <ion-item>
+          <ion-label position="floating">Nome</ion-label>
+          <ion-input type="text" formControlName="paciente"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Tipo de Exame</ion-label>
+          <ion-select formControlName="exame">
+            <ion-select-option value="Covid">Covid</ion-select-option>
+            <ion-select-option value="Sangue">Sangue</ion-select-option>
+            <ion-select-option value="Raio-X">Raio-X</ion-select-option>
+          </ion-select>
+        </ion-item>
+   
+   
+          
+     
           <ion-item>
             <ion-label>Tipo de Exame</ion-label>
-            <ion-select value="especialidade">
-              <ion-select-option value="c">Covid</ion-select-option>
-              <ion-select-option value="s">Sangue</ion-select-option>
-              <ion-select-option value="raiox">Raio-X</ion-select-option>
+            <ion-select formControlName="exame">
+              <ion-select-option value="Covid">Covid</ion-select-option>
+              <ion-select-option value="Sangue">Sangue</ion-select-option>
+              <ion-select-option value="Raio-X">Raio-X</ion-select-option>
             </ion-select>
           </ion-item>
-        </ion-list>
-          
-        <ion-list>
+     
+     
           <ion-item>
             <ion-label>Data</ion-label>
-            <ion-datetime value="1990-02-19" placeholder="Select Date"></ion-datetime>
+            <ion-datetime formControlName="data" placeholder="Select Date"></ion-datetime>
           </ion-item>
-        </ion-list>
+      
 
         <ion-list>
           <ion-item>
-            <ion-label>Bairro</ion-label>
-            <ion-select value="bairro">
-              <ion-select-option value="c">Campo Grande</ion-select-option>
-              <ion-select-option value="s">Seropédica</ion-select-option>
+            <ion-label>Estado</ion-label>
+            <ion-select formControlName="estado">
+              <ion-select-option value="Rio de Janeiro">Rio de Janeiro</ion-select-option>
+              <ion-select-option value="">Rio Grande do Sul</ion-select-option>
               <ion-select-option value="b">Bangu</ion-select-option>
             </ion-select>
           </ion-item>

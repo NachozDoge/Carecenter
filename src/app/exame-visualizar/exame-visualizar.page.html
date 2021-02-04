@@ -10,18 +10,24 @@
   <ion-card style="border-radius: 15px;">
     <ion-item style="margin-top: 10%;">
       <ion-label>Exame:</ion-label>
-      <ion-input disabled="true" value="{{exame.sangue}}"></ion-input>
+      <ion-input disabled="true" value="{{exame.paciente}}"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>Cidade:</ion-label>
-      <ion-input disabled="true" value="{{exame.cidade}}"></ion-input>
+      <ion-input disabled="true" value="{{exame.exame}}"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>Especialista:</ion-label>
-      <ion-input disabled="true" value="{{exame.medico}}"></ion-input>
+      <ion-input disabled="true" value="{{exame.data}}"></ion-input>
     </ion-item>
+
+    <ion-item>
+      <ion-label>Estado:</ion-label>
+      <ion-input disabled="true" value="{{exame.estado}}"></ion-input>
+    </ion-item>
+
 
     <ion-button color="dark" (click)="atualizar()" expand="full" shape="round" style="width: 50%;margin:0 auto;margin-top: 10%;margin-bottom: 5%;">
       Atualizar</ion-button>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Exame } from '../model/exame';
 import { exameService } from '../services/exame.service';
 import { TemplateService } from '../services/template.service';
 
@@ -11,6 +12,7 @@ import { TemplateService } from '../services/template.service';
 export class AgendarExamePage implements OnInit {
 
   formGroup: FormGroup;
+  exame: Exame = new Exame();
 
   constructor(private formBuilder: FormBuilder,
     private template: TemplateService,
@@ -24,10 +26,12 @@ export class AgendarExamePage implements OnInit {
 
   iniciarForm() {
     this.formGroup = this.formBuilder.group({
-      id: [],
-      sangue: [],
+      idmedico: [this.exame.idmedico],
+      idpaciente: [this.exame.idpaciente],
+      paciente: [this.exame.paciente],
+      exame: [],
       data: [],
-      bairro: [],
+      estado: [],
     })
   }
 
