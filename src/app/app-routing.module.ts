@@ -108,6 +108,10 @@ const routes: Routes = [
   {
     path: 'direcionar-consulta',
     loadChildren: () => import('./direcionar-consulta/direcionar-consulta.module').then( m => m.DirecionarConsultaPageModule)
+  },
+  {
+    path: 'medico-exames',
+    loadChildren: () => import('./medico-exames/medico-exames.module').then( m => m.MedicoExamesPageModule)
   }
 
 
