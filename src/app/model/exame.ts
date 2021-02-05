@@ -1,7 +1,7 @@
 
 export class Exame{  
     id : string;
-    exame: string;
+    sangue: string;
     data: string;
     estado : string;
     medico: string; // nome do médico
@@ -13,7 +13,7 @@ export class Exame{
         this.estado = objFirebase.estado;
         this.data = objFirebase.data;
         this.medico = objFirebase.medico;
-        this.exame = objFirebase.exame;
+        this.sangue = objFirebase.sangue;
         this.idmedico = objFirebase.idmedico;
         this.idpaciente = objFirebase.idpaciente;
         this.paciente = objFirebase.paciente;

@@ -20,7 +20,6 @@ export class AgendarExamePage implements OnInit {
   ) {
     this.iniciarForm();
   }
-
   ngOnInit() {
   }
 
@@ -29,12 +28,12 @@ export class AgendarExamePage implements OnInit {
       idmedico: [this.exame.idmedico],
       idpaciente: [this.exame.idpaciente],
       paciente: [this.exame.paciente],
-      exame: [],
+      sangue: [this.exame.sangue],
       data: [],
       estado: [],
+
     })
   }
-
   cadastrar() {
     this.template.loading.then(load => {
 

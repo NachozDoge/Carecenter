@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { Medico } from '../model/medico';
-import { MedicoService } from '../services/medico.service';
+import { Exame } from '../model/exame';
+import { exameService } from '../services/exame.service';
+
 
 @Component({
   selector: 'app-medico-exames',
@@ -10,17 +11,15 @@ import { MedicoService } from '../services/medico.service';
 })
 export class MedicoExamesPage implements OnInit {
 
-  @ViewChild("nome") nome; 
+  @ViewChild("sangue") sangue; 
 
-  lista : Medico[] = [];
-  espc: any;
+  lista : Exame[] = [];
 
-
-  constructor(private medicoServ : MedicoService,
+  constructor(private exameServ : exameService,
     private navCtrl : NavController) { }
 
   ngOnInit() {
-    this.medicoServ.listaDemedico().subscribe(response=>{
+    this.exameServ.listaDeExame().subscribe(response=>{
       // O servidor respondeu
       
       this.lista = response;
@@ -37,12 +36,12 @@ export class MedicoExamesPage implements OnInit {
   }
 
   agendar(id){
-    this.navCtrl.navigateForward(['/agendar-exame',id])
+    this.navCtrl.navigateForward(['/agendar-exame',id.sangue])
   }
 
   pesquisar(){
-    console.log("Busca por: "+this.nome.value)
-    this.medicoServ.buscaPorEspecialidade(this.nome.value).subscribe(response=>{
+    console.log("Busca por: "+this.sangue.value)
+    this.exameServ.buscaPorNome(this.sangue.value).subscribe(response=>{
       this.lista = [];
       this.lista = response;
     });
