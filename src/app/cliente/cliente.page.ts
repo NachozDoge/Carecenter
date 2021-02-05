@@ -24,7 +24,6 @@ export class ClientePage implements OnInit {
 
   iniciarForm() {
     this.formGroup = this.formBuilder.group({
-      foto: [],
       nome: [],
       idade: [],
       cpf: [],

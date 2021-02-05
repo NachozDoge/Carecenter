@@ -1,25 +1,30 @@
 export class Cliente{
 
     id : string;
-    cidade: string;
-    cpf: string;
-    email: string;
-    endereco: string;
-    estado: string;
     nome: string;
+    idade: string;
+    cpf: string;
+    sangue: string;
+    endereco: string;
     numero: string;
+    cidade: string;
+    estado: string;
+    email: string;
     telefone: string;
 
 
     setData(objFirebase : any){
-        this.cidade = objFirebase.cidade;
-        this.cpf = objFirebase.cpf;
-        this.email = objFirebase.email;
-        this.endereco = objFirebase.endereco;
         this.nome = objFirebase.nome;
+        this.idade = objFirebase.idade;
+        this.cpf = objFirebase.cpf;
+        this.sangue = objFirebase.sangue;
+        this.endereco = objFirebase.endereco;
         this.numero = objFirebase.numero;
-        this.telefone = objFirebase.telefone;
+        this.cidade = objFirebase.cidade;
         this.estado = objFirebase.estado;
+        this.email = objFirebase.email;
+        this.telefone = objFirebase.telefone;
+       
     }
 
 }
