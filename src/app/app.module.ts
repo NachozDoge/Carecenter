@@ -23,8 +23,6 @@ import { exameService } from './services/exame.service';
 import { MedicoService } from './services/medico.service';
 import { PerfilPageModule } from './perfil/perfil.module';
 import { CadastrarService } from './services/cadastrar.service';
-import { Camera } from '@ionic-native/camera/ngx';
-import { File } from '@ionic-native/file/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -42,7 +40,8 @@ import { File } from '@ionic-native/file/ngx';
     PerfilPageModule,
     FormsModule,
     ReactiveFormsModule,
-    ], 
+    ],
+
     providers: [
       StatusBar,
       SplashScreen,
@@ -52,8 +51,6 @@ import { File } from '@ionic-native/file/ngx';
       exameService,
       MedicoService,
       CadastrarService,
-      Camera,
-      File,
       
       { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
