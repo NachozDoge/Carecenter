@@ -112,6 +112,10 @@ const routes: Routes = [
   {
     path: 'medico-exames',
     loadChildren: () => import('./medico-exames/medico-exames.module').then( m => m.MedicoExamesPageModule)
+  },
+  {
+    path: 'cliente',
+    loadChildren: () => import('./cliente/cliente.module').then( m => m.ClientePageModule)
   }
 
 
