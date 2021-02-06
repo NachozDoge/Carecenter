@@ -6,7 +6,6 @@ import { exameService } from '../services/exame.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Perfil } from '../model/perfil';
 import { PerfilService } from '../services/perfil.service';
-import { ConsultaService } from '../services/consulta.service';
 import { TemplateService } from '../service/template';
 import { Exame } from '../model/exame';
 
@@ -24,7 +23,6 @@ export class AgendarExamePage implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     private template: TemplateService,
-    private marcarServ: ConsultaService,
     private perfilservice: PerfilService,
     private auth: AngularFireAuth,
     private exameServ: exameService,
@@ -41,15 +39,6 @@ export class AgendarExamePage implements OnInit {
       this.exameServ.buscaPorId(id).subscribe(response => {
         this.exame = response;
         this.iniciarForm();
-      })
-      this.auth.authState.subscribe(response => {
-        this.perfilservice.buscaperfilPorId(response.uid).subscribe(response => {
-          this.perfil = response;
-          console.log(response);
-          this.iniciarForm();
-        })
-
-
       })
 
     })
@@ -72,7 +61,7 @@ export class AgendarExamePage implements OnInit {
 
       load.present();
 
-      this.marcarServ.cadastrar(this.formGroup.value).subscribe(response => {
+      this.exameServ.cadastrar(this.formGroup.value).subscribe(response => {
         console.log("OK");
         load.dismiss();
         this.template.myAlert(response);

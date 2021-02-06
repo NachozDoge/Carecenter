@@ -41,15 +41,7 @@ export class MarcarConsultaPage implements OnInit {
       this.medicoServ.buscaPorId(id).subscribe(response => {
         this.medico = response;
         this.iniciarForm();
-      })
-      this.auth.authState.subscribe(response => {
-        this.perfilservice.buscaperfilPorId(response.uid).subscribe(response => {
-          this.perfil = response;
-          console.log(response);
-          this.iniciarForm();
-        })
-
-
+  
       })
 
     })

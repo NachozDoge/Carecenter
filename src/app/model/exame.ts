@@ -7,6 +7,7 @@ export class Exame{
     medico: string; // nome do médico
     idmedico: string;
     idpaciente: string;
+    metodo: string;
     paciente: string; // nome do paciente
 
     setData(objFirebase : any){
@@ -16,6 +17,7 @@ export class Exame{
         this.sangue = objFirebase.sangue;
         this.idmedico = objFirebase.idmedico;
         this.idpaciente = objFirebase.idpaciente;
+        this.metodo = objFirebase.metodo; 
         this.paciente = objFirebase.paciente;
 
     }
