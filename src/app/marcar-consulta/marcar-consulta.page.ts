@@ -59,7 +59,7 @@ export class MarcarConsultaPage implements OnInit {
     this.formGroup = this.formBuilder.group({
       idcliente: [this.perfil.id],
       idmedico: [this.medico.id],
-      nomecliente: [this.perfil.nome],
+      nome: [this.perfil.nome],
       nomemedico: [this.medico.nome],
       metodo: [],
       dataconsulta: [],

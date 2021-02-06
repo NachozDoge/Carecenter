@@ -18,14 +18,9 @@
 
       <form [formGroup]="formGroup">
         <ion-list>
-       
-          <ion-item>
-            <ion-label>Tipo de Exame</ion-label>
-            <ion-select formControlName="sangue">
-              <ion-select-option value="Covid">Covid</ion-select-option>
-              <ion-select-option value="Aids">Aids</ion-select-option>
-              <ion-select-option value="Sifilis">Sifilis</ion-select-option>
-            </ion-select>
+          <ion-item style="margin-top: 10%;">
+            <ion-label>Tipo de Exame:</ion-label>
+            <ion-input disabled="true" value="{{exame.sangue}}"></ion-input>
           </ion-item>
      
           <ion-item>
@@ -38,7 +33,7 @@
             <ion-select formControlName="estado">
               <ion-select-option value="Rio de Janeiro">Rio de Janeiro</ion-select-option>
               <ion-select-option value="Rio Grande do Sul">Rio Grande do Sul</ion-select-option>
-              <ion-select-option value="bangu">Bangu</ion-select-option>
+              <ion-select-option value="Bangu">Bangu</ion-select-option>
             </ion-select>
           </ion-item>
         </ion-list>

@@ -1,8 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Exame } from '../model/exame';
+import { NavController } from '@ionic/angular';
 import { exameService } from '../services/exame.service';
-import { TemplateService } from '../services/template.service';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { Perfil } from '../model/perfil';
+import { PerfilService } from '../services/perfil.service';
+import { ConsultaService } from '../services/consulta.service';
+import { TemplateService } from '../service/template';
+import { Exame } from '../model/exame';
 
 @Component({
   selector: 'app-agendar-exame',
@@ -12,26 +18,53 @@ import { TemplateService } from '../services/template.service';
 export class AgendarExamePage implements OnInit {
 
   formGroup: FormGroup;
+
   exame: Exame = new Exame();
+  perfil: Perfil = new Perfil();
 
   constructor(private formBuilder: FormBuilder,
     private template: TemplateService,
+    private marcarServ: ConsultaService,
+    private perfilservice: PerfilService,
+    private auth: AngularFireAuth,
     private exameServ: exameService,
+    private route: ActivatedRoute,
+    private navCtrl: NavController,
   ) {
     this.iniciarForm();
   }
   ngOnInit() {
-  }
 
+    this.route.paramMap.subscribe(url => {
+      let id = url.get('id');
+
+      this.exameServ.buscaPorId(id).subscribe(response => {
+        this.exame = response;
+        this.iniciarForm();
+      })
+      this.auth.authState.subscribe(response => {
+        this.perfilservice.buscaperfilPorId(response.uid).subscribe(response => {
+          this.perfil = response;
+          console.log(response);
+          this.iniciarForm();
+        })
+
+
+      })
+
+    })
+
+  }
   iniciarForm() {
     this.formGroup = this.formBuilder.group({
+      sangue: [this.exame.sangue],
       idmedico: [this.exame.idmedico],
       idpaciente: [this.exame.idpaciente],
-      paciente: [this.exame.paciente],
-      sangue: [this.exame.sangue],
-      data: [],
       estado: [],
-
+      metodo: [],
+      data: [],
+      medico: [],
+      paciente: [],
     })
   }
   cadastrar() {
@@ -39,7 +72,7 @@ export class AgendarExamePage implements OnInit {
 
       load.present();
 
-      this.exameServ.cadastrar(this.formGroup.value).subscribe(response => {
+      this.marcarServ.cadastrar(this.formGroup.value).subscribe(response => {
         console.log("OK");
         load.dismiss();
         this.template.myAlert(response);
@@ -52,3 +85,4 @@ export class AgendarExamePage implements OnInit {
     })
   }
 }
+

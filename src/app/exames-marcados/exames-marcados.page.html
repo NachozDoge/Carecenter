@@ -31,7 +31,7 @@
 
               <ion-list>
                 <ion-item *ngFor="let exame of lista">
-                  <ion-label>{{exame.exame}}</ion-label>
+                  <ion-label>{{exame.sangue}}</ion-label>
                   <ion-button color="dark" (click)="visualizar(exame)">Visualizar</ion-button>
                 </ion-item>
               </ion-list>
@@ -69,7 +69,7 @@
 <div class="card-content">
   <ion-list>
     <ion-item *ngFor="let exame of lista">
-      <ion-label>{{exame.exame}}</ion-label>
+      <ion-label>{{exame.sangue}}</ion-label>
       <ion-button color="dark" (click)="visualizar(exame)">Visualizar</ion-button>
     </ion-item>
   </ion-list>        

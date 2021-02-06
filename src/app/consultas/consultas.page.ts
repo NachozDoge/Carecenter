@@ -29,13 +29,13 @@ export class ConsultasPage implements OnInit {
     })
   }
 
-  visualizar(nome){
-    this.navCtrl.navigateForward(['/consultas-visualizar',nome])
+  visualizar(id){
+    this.navCtrl.navigateForward(['/consultas-visualizar',id])
   }
 
   pesquisar(){
     console.log("Busca por: "+this.nome.value)
-    this.consultaServ.buscaPorNome(this.nome.value).subscribe(response=>{
+    this.consultaServ.buscaPorEspecialidade(this.nome.value).subscribe(response=>{
       this.lista = [];
       this.lista = response;
     });

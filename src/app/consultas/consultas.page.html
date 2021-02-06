@@ -27,12 +27,12 @@
                   Pesquisar</ion-button>
               </div>
 
-              <ion-list style="margin-top: 1em;">
-                <ion-item *ngFor="let marcar of lista">
-                  <ion-label>{{marcar.nome}}</ion-label>
-                  <ion-button color="dark" (click)="visualizar(marcar)" shape="round">Ver</ion-button>
+              <ion-list>
+                <ion-item *ngFor="let consulta of lista">
+                  <ion-label>{{consulta.especialidade}}</ion-label>
+                  <ion-button color="dark" (click)="visualizar(consulta)">Visualizar</ion-button>
                 </ion-item>
-              </ion-list>
+              </ion-list>        
             </div>
 
         </ion-card-content>

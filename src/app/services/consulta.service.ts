@@ -55,6 +55,26 @@ export class ConsultaService {
         }))
     }
 
+    buscaPorEspecialidade(nome: string): Observable<any> {
+
+        // Observable -> Aguardar resposta do servidor
+        return from(new Observable(observe => { // converter para Observable
+            this.firestore.collection('consulta').ref.orderBy("nome")
+                .startAt(nome).endAt(nome + "\uf8ff").get().then(response => {
+                    let lista: Consulta[] = [];
+                    response.docs.map(obj => {
+                        // será repetido para cada registro, cada registro do Firestore se chama obj
+                        let consulta: Consulta = new Consulta();
+                        consulta.setData(obj.data());// obj.payload.doc.data() -> Dados do consulta
+                        consulta.id = obj.id; // inserindo ID
+                        lista.push(consulta); // adicionando o consulta na lista // push é adicionar
+                    });
+                    observe.next(lista);
+                })
+
+        }))
+    }
+
     getconsulta(idUser) {
         return from(new Observable(observe => { // converter para Observable
 

@@ -36,7 +36,7 @@ export class MedicoExamesPage implements OnInit {
   }
 
   agendar(id){
-    this.navCtrl.navigateForward(['/agendar-exame',id.sangue])
+    this.navCtrl.navigateForward(['/agendar-exame',id])
   }
 
   pesquisar(){
