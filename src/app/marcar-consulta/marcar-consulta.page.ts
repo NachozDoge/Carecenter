@@ -34,7 +34,12 @@ export class MarcarConsultaPage implements OnInit {
     this.iniciarForm();
   }
   ngOnInit() {
-
+    this.auth.authState.subscribe(response => {
+    this.perfilservice.getperfil(response.uid).subscribe(perfil => {
+    this.perfil=perfil as Perfil;
+    console.log(this.perfil)
+    })
+    })
     this.route.paramMap.subscribe(url => {
       let id = url.get('id');
 

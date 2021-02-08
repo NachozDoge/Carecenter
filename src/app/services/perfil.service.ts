@@ -63,9 +63,9 @@ export class PerfilService {
             this.firestore.collection("Perfil").doc(idUser).get().subscribe(response => { // .doc seleciona o perfil com base no id
 
                 if (response.exists == false) {
-
+                observe.next(null);
                 } else {
-
+                observe.next(response.data());
                 }
             })
         }))
