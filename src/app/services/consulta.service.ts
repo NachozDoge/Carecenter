@@ -55,12 +55,12 @@ export class ConsultaService {
         }))
     }
 
-    buscaPorEspecialidade(nome: string): Observable<any> {
+    buscaPorEspecialidade(especialidade: string): Observable<any> {
 
         // Observable -> Aguardar resposta do servidor
         return from(new Observable(observe => { // converter para Observable
-            this.firestore.collection('consulta').ref.orderBy("nome")
-                .startAt(nome).endAt(nome + "\uf8ff").get().then(response => {
+            this.firestore.collection('consulta').ref.orderBy("especialidade")
+                .startAt(especialidade).endAt(especialidade + "\uf8ff").get().then(response => {
                     let lista: Consulta[] = [];
                     response.docs.map(obj => {
                         // será repetido para cada registro, cada registro do Firestore se chama obj
