@@ -35,7 +35,7 @@ const routes: Routes = [
     loadChildren: () => import('./redefinir-senha/redefinir-senha.module').then( m => m.RedefinirSenhaPageModule)
   },
   {
-    path: 'agendar-exame',
+    path: 'agendar-exame/:id',
     loadChildren: () => import('./agendar-exame/agendar-exame.module').then( m => m.AgendarExamePageModule)
   },
   {

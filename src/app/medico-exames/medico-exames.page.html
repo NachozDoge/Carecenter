@@ -26,7 +26,7 @@
                 <ion-item *ngFor="let exame of lista">
                   <ion-label>{{exame.sangue}}</ion-label>
                   <ion-button color="dark" (click)="visualizar(exame)" shape="round">Ver</ion-button>
-                  <ion-button color="dark" (click)="agendar(exame)" shape="round">Agendar</ion-button>
+                  <ion-button color="dark" (click)="agendar(exame.id)" shape="round">Agendar</ion-button>
                 </ion-item>
               </ion-list>
             </div>
