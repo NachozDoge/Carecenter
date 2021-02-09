@@ -21,21 +21,16 @@
               <div class="SBar">
                 <form class="searchbar">
                  
-                  <ion-select #nome value="especialidade"   >
-                    <ion-select-option value="Fisioterapeuta">Fisioterapeuta</ion-select-option>
-                    <ion-select-option value="Nutricionista">Nutricionista</ion-select-option>
-                    <ion-select-option value="Neuro">Neuro</ion-select-option>
-                  </ion-select>
                 </form>
                 <ion-button shape="round" color="dark" class="btnSearchbar" (click)="pesquisar()" style="margin-right: 1.7em;">
                   Pesquisar</ion-button>
               </div>
 
               <ion-list style="margin-top: 2em;">
-                <ion-item *ngFor="let medico of lista">
-                  <ion-label>{{medico.nome}}</ion-label>
+                <ion-item *ngFor="let user of lista">
+                  <ion-label>{{user.usuario}}</ion-label>
                   <ion-button color="dark" (click)="visualizar(medico)" shape="round">Ver</ion-button>
-                  <ion-button color="dark" (click)="agendar(medico)" shape="round">Agendar</ion-button>
+                  <ion-button color="dark" (click)="agendar(medico.id)" shape="round">Agendar</ion-button>
                 </ion-item>
               </ion-list>
             </div>
