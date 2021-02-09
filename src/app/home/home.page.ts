@@ -13,7 +13,6 @@ export class HomePage implements OnInit {
 
   constructor(private router: Router,
     private menuCtrl : MenuController) {
-    this.goToPage();
   }
 
   ngOnInit() {

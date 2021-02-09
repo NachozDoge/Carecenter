@@ -56,23 +56,34 @@ export class ClienteService {
         }))
     }
 
-    
-    getPerfil(idUser) {
+    getPerfil(idUser): Observable<any>  {
         return from(new Observable(observe => { // converter para Observable
 
             this.firestore.collection("perfil").doc(idUser).get().subscribe(response => { // .doc seleciona o cliente com base no id
 
                 if (response.exists == false) {
-
+                    this.nPerfil(idUser);
                 } else {
-
+                    observe.next(response.data());
                 }
             })
         }))
     }
-
-
-
+    nPerfil(iduser){
+        let json = {
+            nome: "",
+            idade: "",
+            cpf: "",
+            sangue: "",
+            endereco: "",
+            numero: "",
+            cidade: "",
+            estado: "",
+            email: "",
+            telefone: ""
+        }
+        this.firestore.collection('perfil').doc(iduser).set(json).then(() =>{})
+      }
     //
 
     cadastrar(cliente: any): Observable<any> {

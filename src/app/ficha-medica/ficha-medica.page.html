@@ -22,87 +22,69 @@
     </ion-card-header>
 
     <ion-card-content>
+      <form [formGroup]="formGroup">
 
-      <div class="separador"></div>
-
-      <div class="card-content">
-
-        <ion-list>
-          <ion-item *ngFor="let cliente of lista">
-            <div class=left-item-label>Nome:</div>
-            <ion-label color="danger">{{cliente.nome}}</ion-label>
-          </ion-item>
-        </ion-list>
-
-        <ion-list>
-          <ion-item *ngFor="let cliente of lista">
-            <div class=left-item-label>Idade:</div>
-            <ion-label color="danger">{{cliente.idade}}</ion-label>
-          </ion-item>
-        </ion-list>
-
-        <ion-list>
-          <ion-item *ngFor="let cliente of lista">
-            <div class=left-item-label>CPF:</div>
-            <ion-label color="danger">{{cliente.cpf}}</ion-label>
-          </ion-item>
-        </ion-list>
-
-        <ion-list>
-          <ion-item *ngFor="let cliente of lista">
-            <div class=left-item-label>Sangue:</div>
-            <ion-label color="danger">{{cliente.sangue}}</ion-label>
-          </ion-item>
-        </ion-list>
-
-        <ion-list>
-          <ion-item *ngFor="let cliente of lista">
-            <div class=left-item-label>Endereço:</div>
-            <ion-label color="danger">{{cliente.endereco}}</ion-label>
-          </ion-item>
-        </ion-list>
-
-        <ion-list>
-          <ion-item *ngFor="let cliente of lista">
-            <div class=left-item-label>Número:</div>
-            <ion-label color="danger">{{cliente.numero}}</ion-label>
-          </ion-item>
-        </ion-list>
-
-        <ion-list>
-          <ion-item *ngFor="let cliente of lista">
-            <div class=left-item-label>Cidade:</div>
-            <ion-label color="danger">{{cliente.cidade}}</ion-label>
-          </ion-item>
-        </ion-list>
-
-        <ion-list>
-          <ion-item *ngFor="let cliente of lista">
-            <div class=left-item-label>Estado:</div>
-            <ion-label color="danger">{{cliente.estado}}</ion-label>
-          </ion-item>
-        </ion-list>
-
-        <ion-list>
-          <ion-item *ngFor="let cliente of lista">
-            <div class=left-item-label>Email:</div>
-            <ion-label text-wrap color="danger">{{cliente.email}}</ion-label>
-          </ion-item>
-        </ion-list>
-
-        <ion-list>
-          <ion-item *ngFor="let cliente of lista">
-            <div class=left-item-label>Telefone:</div>
-            <ion-label color="danger">{{cliente.telefone}}</ion-label>
-          </ion-item>
-        </ion-list>
-        <div class="separador"></div>
-
-        <ion-button color="dark" shape="round" size="medium" (click)="atualizar()" expand="full" style="width:50%;margin:0 auto;">
-          Atualizar</ion-button>
-
-      </div>
-    
+      
+       
+        <ion-item>
+          <ion-label position="floating">Nome</ion-label>
+          <ion-input type="text" formControlName="nome"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating">Idade</ion-label>
+          <ion-input type="text" formControlName="idade"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating">CPF</ion-label>
+          <ion-input type="text" formControlName="cpf"></ion-input>
+        </ion-item>
+  
+        
+        <ion-item>
+          <ion-label position="floating">Tipo sanguíneo</ion-label>
+          <ion-input type="text" formControlName="sangue"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating">Endereco</ion-label>
+          <ion-input type="text" formControlName="endereco"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating">Número</ion-label>
+          <ion-input type="text" formControlName="numero"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating">Cidade</ion-label>
+          <ion-input type="text" formControlName="cidade"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating">Estado</ion-label>
+          <ion-input type="text" formControlName="estado"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating">E-mail</ion-label>
+          <ion-input type="text" formControlName="email"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating">Telefone</ion-label>
+          <ion-input type="text" formControlName="telefone"></ion-input>
+        </ion-item>
+  
+  
+        <div class="separador">
+        </div>
+  
+        <ion-button class="btnProsseguir" shape="round" size="medium" color="dark" expand="block"
+          (click)="atualizar()">Atualizar</ion-button>
+          
+      </form>
     </ion-card-content>
   </ion-card>
   

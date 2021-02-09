@@ -9,6 +9,7 @@ import { Perfil } from '../model/perfil';
 import { PerfilService } from '../services/perfil.service';
 import { ConsultaService } from '../services/consulta.service';
 import { TemplateService } from '../service/template';
+import { ClienteService } from '../services/cliente.service';
 
 @Component({
   selector: 'app-marcar-consulta',
@@ -25,7 +26,7 @@ export class MarcarConsultaPage implements OnInit {
   constructor(private formBuilder: FormBuilder,
     private template: TemplateService,
     private marcarServ: ConsultaService,
-    private perfilservice: PerfilService,
+    private clienteService: ClienteService,
     private auth: AngularFireAuth,
     private medicoServ: MedicoService,
     private route: ActivatedRoute,
@@ -34,22 +35,28 @@ export class MarcarConsultaPage implements OnInit {
     this.iniciarForm();
   }
   ngOnInit() {
-    this.auth.authState.subscribe(response => {
-    this.perfilservice.getperfil(response.uid).subscribe(perfil => {
-    this.perfil=perfil as Perfil;
-    console.log(this.perfil)
-    })
-    })
-    this.route.paramMap.subscribe(url => {
-      let id = url.get('id');
 
-      this.medicoServ.buscaPorId(id).subscribe(response => {
-        this.medico = response;
-        this.iniciarForm();
-  
+    this.auth.currentUser.then(response=>{
+      
+      this.clienteService.getPerfil(response.uid).subscribe(dados=>{
+        
+        this.perfil = dados as Perfil;
+        console.log(this.perfil);
+
+        this.route.paramMap.subscribe(url => {
+          let id = url.get('id');
+    
+          this.medicoServ.buscaPorId(id).subscribe(response => {
+            this.medico = response;
+            this.iniciarForm();
+      
+          })
+    
+        })
       })
-
     })
+
+
 
   }
   iniciarForm() {
@@ -69,7 +76,7 @@ export class MarcarConsultaPage implements OnInit {
       load.present();
 
       this.marcarServ.cadastrar(this.formGroup.value).subscribe(response => {
-        console.log("OK");
+        console.log(this.formGroup.value);
         load.dismiss();
         this.template.myAlert(response);
       }, () => {

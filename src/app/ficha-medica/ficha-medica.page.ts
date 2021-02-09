@@ -1,7 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { Perfil } from '../model/perfil';
+import { ClienteService } from '../services/cliente.service';
 import { PerfilService } from '../services/perfil.service';
 
 @Component({
@@ -13,39 +16,55 @@ export class FichaMedicaPage implements OnInit {
 
   @ViewChild("id") id; 
 
-  lista : Perfil[] = [];
-  perfil: any;
+  cliente : Perfil = new Perfil();
+  formGroup: FormGroup;
 
-  constructor(private perfilServ : PerfilService,
-    private navCtrl : NavController) { }
+  constructor(private clienteService : ClienteService,
+    private auth: AngularFireAuth,
+    private navCtrl : NavController,
+    private formBuilder: FormBuilder,) {
+      this.iniciarForm();
+    }
 
   ngOnInit() {
-    this.perfilServ.listaDePerfil().subscribe(response=>{
-      // O servidor respondeu
+    this.auth.currentUser.then(response=>{
       
-      this.lista = response;
-     
-
+      this.clienteService.getPerfil(response.uid).subscribe(dados=>{
       
+      this.cliente = dados;
+      console.log(this.cliente)
     },err=>{
       // erro
     })
-  }
+  })
+}
 
-  visualizar(perfil){
-    this.navCtrl.navigateForward(['/clientes-visualizar',perfil.id])
-  }
+
+
   atualizar(){
-    this.navCtrl.navigateForward(['/ficha-atualizar',this.perfil.id]);
+    this.auth.currentUser.then(response=>{
+   this.clienteService.atualizaPerfil(response.uid,this.formGroup.value).subscribe(response=>{
+    console.log('Atualizado com sucesso')
+   });
+  })
+   
   }
 
-  pesquisar(){
-    console.log("Busca por: "+this.id.value)
-    this.perfilServ.buscaPorNome(this.id.value).subscribe(response=>{
-      this.lista = [];
-      this.lista = response;
-    });
+  iniciarForm() {
+    this.formGroup = this.formBuilder.group({
+
+      nome: [],
+      idade: [],
+      cpf: [],
+      sangue: [],
+      endereco: [],
+      numero: [],
+      cidade: [],
+      estado: [],
+      email: [],
+      telefone: []
+    })
   }
-  
+ 
 
 }

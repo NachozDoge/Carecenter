@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -13,7 +13,8 @@ import { FichaMedicaPage } from './ficha-medica.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    FichaMedicaPageRoutingModule
+    FichaMedicaPageRoutingModule,
+    ReactiveFormsModule,
   ],
   declarations: [FichaMedicaPage, ExpandableComponent]
 })

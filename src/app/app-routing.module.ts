@@ -39,7 +39,7 @@ const routes: Routes = [
     loadChildren: () => import('./agendar-exame/agendar-exame.module').then( m => m.AgendarExamePageModule)
   },
   {
-    path: 'marcar-consulta',
+    path: 'marcar-consulta/:id',
     loadChildren: () => import('./marcar-consulta/marcar-consulta.module').then( m => m.MarcarConsultaPageModule)
   },
   {
@@ -93,7 +93,8 @@ const routes: Routes = [
   {
     path: 'medico-atualizar',
     loadChildren: () => import('./medico-atualizar/medico-atualizar.module').then( m => m.MedicoAtualizarPageModule)
-  },  {
+  },
+  {
     path: 'perfil',
     loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
   },
