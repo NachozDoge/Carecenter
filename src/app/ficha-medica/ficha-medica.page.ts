@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { Perfil } from '../model/perfil';
+import { appService } from '../service/app';
+import { TemplateService } from '../service/template';
 import { ClienteService } from '../services/cliente.service';
 import { PerfilService } from '../services/perfil.service';
 
@@ -18,10 +20,12 @@ export class FichaMedicaPage implements OnInit {
 
   cliente : Perfil = new Perfil();
   formGroup: FormGroup;
+  alert: any;
 
   constructor(private clienteService : ClienteService,
     private auth: AngularFireAuth,
     private navCtrl : NavController,
+    private app : appService,
     private formBuilder: FormBuilder,) {
       this.iniciarForm();
     }
@@ -42,9 +46,11 @@ export class FichaMedicaPage implements OnInit {
 
 
   atualizar(){
-    this.auth.currentUser.then(response=>{
-   this.clienteService.atualizaPerfil(response.uid,this.formGroup.value).subscribe(response=>{
-    console.log('Atualizado com sucesso')
+  this.auth.currentUser.then(response=>{
+  this.clienteService.atualizaPerfil(response.uid,this.formGroup.value).subscribe(response=>{
+    this.app.alert("Atualizado com sucesso");
+    // alert('Atualizado com sucesso')
+     
    });
   })
    
