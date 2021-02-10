@@ -8,6 +8,8 @@ import { Perfil } from '../model/perfil';
 import { PerfilService } from '../services/perfil.service';
 import { TemplateService } from '../service/template';
 import { Exame } from '../model/exame';
+import { Medico } from '../model/medico';
+import { MedicoService } from '../services/medico.service';
 
 @Component({
   selector: 'app-agendar-exame',
@@ -20,10 +22,12 @@ export class AgendarExamePage implements OnInit {
 
   exame: Exame = new Exame();
   perfil: Perfil = new Perfil();
+  medico: Medico = new Medico();
 
   constructor(private formBuilder: FormBuilder,
     private template: TemplateService,
     private perfilservice: PerfilService,
+    private medicoServ: MedicoService,
     private auth: AngularFireAuth,
     private exameServ: exameService,
     private route: ActivatedRoute,
@@ -32,6 +36,13 @@ export class AgendarExamePage implements OnInit {
     this.iniciarForm();
   }
   ngOnInit() {
+
+    this.auth.currentUser.then(response=>{
+      
+      this.perfilservice.getperfil(response.uid).subscribe(dados=>{
+        
+        this.perfil = dados as Perfil;
+        console.log(this.perfil);
 
     this.route.paramMap.subscribe(url => {
       let id = url.get('id');
@@ -43,17 +54,17 @@ export class AgendarExamePage implements OnInit {
 
     })
 
+  })
+})
   }
+
   iniciarForm() {
     this.formGroup = this.formBuilder.group({
       sangue: [this.exame.sangue],
-      idmedico: [this.exame.idmedico],
-      idpaciente: [this.exame.idpaciente],
       estado: [],
       metodo: [],
       data: [],
-      medico: [],
-      paciente: [],
+      nome: [this.perfil.nome],
     })
   }
   cadastrar() {

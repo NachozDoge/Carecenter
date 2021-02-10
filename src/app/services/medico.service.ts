@@ -85,14 +85,29 @@ export class MedicoService {
             this.firestore.collection("medico").doc(idUser).get().subscribe(response => { // .doc seleciona o medico com base no id
 
                 if (response.exists == false) {
+                    this.nMedico(idUser);
 
                 } else {
-
+                observe.next(response.data());
                 }
             })
         }))
     }
-
+    nMedico(iduser){
+        let json = {
+            nome: "",
+            espc: "",
+            cpf: "",
+            endereco: "",
+            numero: "",
+            cidade: "",
+            estado: "",
+            telefone: "",
+            email: "",
+            dataesq: ""
+        }
+        this.firestore.collection('perfil').doc(iduser).set(json).then(() =>{})
+      }
 
 
     //
