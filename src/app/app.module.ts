@@ -24,6 +24,7 @@ import { MedicoService } from './services/medico.service';
 import { PerfilPageModule } from './perfil/perfil.module';
 import { CadastrarService } from './services/cadastrar.service';
 import { appService } from './service/app';
+import { senhaService } from './service/senha';
 
 @NgModule({
   declarations: [AppComponent],
@@ -53,6 +54,7 @@ import { appService } from './service/app';
       MedicoService,
       CadastrarService,
       appService,
+      senhaService,
       
       { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

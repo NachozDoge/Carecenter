@@ -1,5 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { ClienteService } from '../services/cliente.service';
+import { NavController } from '@ionic/angular';
+import { Perfil } from '../model/perfil';
+import { senhaService } from '../service/senha';
 
 @Component({
   selector: 'app-redefinir-senha',
@@ -7,17 +12,26 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./redefinir-senha.page.scss'],
 })
 export class RedefinirSenhaPage implements OnInit {
+  formGroup: any;
+  
+  @ViewChild("id") id; 
 
-  
-  constructor(
-    
-  ) { 
-  
-  }
+  cliente : Perfil = new Perfil();
+
+  constructor(private clienteService : ClienteService,
+    private auth: AngularFireAuth,
+    private navCtrl : NavController,
+    private senha : senhaService,
+    private formBuilder: FormBuilder,) {
+    }
 
   ngOnInit() {
   }
 
 
-  
-}
+  atualizar(){
+    this.senha.myAlert("Atualizado com sucesso");
+    // alert('Atualizado com sucesso')
+     
+   }
+  }
