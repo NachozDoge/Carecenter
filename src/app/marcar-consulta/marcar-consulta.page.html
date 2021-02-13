@@ -17,33 +17,32 @@
     <ion-card-content>
      <form [formGroup]="formGroup">
         <ion-list>
-        <ion-item style="margin-top: 10%;">
-          <ion-label>Nome:</ion-label>
-          <ion-input disabled="true" value="{{medico.nome}}"></ion-input>
-        </ion-item>
-     
-        <ion-item>
-          <ion-label>Especialidade:</ion-label> 
-          <ion-input disabled="true" value="{{medico.espc}}"></ion-input>
-        </ion-item>
- 
-       
-  <ion-item>
-    <ion-label>Data</ion-label>
-    <ion-datetime formControlName="dataconsulta" placeholder="Select Date"></ion-datetime>
-  </ion-item>
+          <ion-item style="margin-top: 10%;">
+            <ion-label>Nome:</ion-label>
+            <ion-input disabled="true" value="{{medico.nome}}"></ion-input>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>Especialidade:</ion-label> 
+            <ion-input disabled="true" value="{{medico.espc}}"></ion-input>
+          </ion-item>
 
-  <ion-item>
-    <ion-label>Metódo</ion-label>
-    <ion-select formControlName="metodo">
-      <ion-select-option value="online">Online</ion-select-option>
-      <ion-select-option value="chat">Chat</ion-select-option>
-    </ion-select>
-  </ion-item>
-</ion-list>
+          <ion-item>
+            <ion-label>Data</ion-label>
+            <ion-datetime formControlName="dataconsulta" placeholder="Select Date"></ion-datetime>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Metódo</ion-label>
+            <ion-select formControlName="metodo">
+              <ion-select-option value="online">Online</ion-select-option>
+              <ion-select-option value="chat">Chat</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
         
         <ion-button class="btnProsseguir" shape="round" size="medium" color="dark" expand="block"
-      (click)="cadastrar()">Marcar</ion-button>
+          (click)="cadastrar()">Marcar</ion-button>
         <div class="separador"></div>
 
       </form>

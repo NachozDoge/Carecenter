@@ -13,7 +13,7 @@ ion-avatar > img{
 
 }
 ion-title{
-    margin-left: 40%;
+    margin-left: 35%;
 
     img{
         height: 72px;
@@ -64,9 +64,23 @@ ion-item{
     font-weight:bold;
 }
 
+.logo{
+    width:70%;
+    margin-top:10%;
+}
+
 .ion-margin-redef{
     border-radius: 80px;
     width: 70%;
     margin: 0px auto;
     margin-bottom: 2%;
+}
+
+.separador{
+    padding-bottom: 3em;
+}
+
+.btnProsseguir{
+    width: 50%;
+    font-weight: bold;
 }
