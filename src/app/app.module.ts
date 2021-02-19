@@ -21,7 +21,6 @@ import { MarcarConsultaPageModule } from './marcar-consulta/marcar-consulta.modu
 import { ConsultaService } from './services/consulta.service';
 import { exameService } from './services/exame.service';
 import { MedicoService } from './services/medico.service';
-import { PerfilPageModule } from './perfil/perfil.module';
 import { CadastrarService } from './services/cadastrar.service';
 import { appService } from './service/app';
 import { senhaService } from './service/senha';
@@ -39,7 +38,6 @@ import { senhaService } from './service/senha';
     AngularFireStorageModule,
     CadastrarPerfilPageModule,
     MarcarConsultaPageModule,
-    PerfilPageModule,
     FormsModule,
     ReactiveFormsModule,
     ],

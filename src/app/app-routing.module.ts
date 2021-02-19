@@ -83,32 +83,12 @@ const routes: Routes = [
     loadChildren: () => import('./cadastrar-medico/cadastrar-medico.module').then( m => m.CadastrarMedicoPageModule)
   },
   {
-    path: 'medico-lista',
-    loadChildren: () => import('./medico-lista/medico-lista.module').then( m => m.MedicoListaPageModule)
-  },
-  {
     path: 'medico-visualizar',
     loadChildren: () => import('./medico-visualizar/medico-visualizar.module').then( m => m.MedicoVisualizarPageModule)
   },
   {
-    path: 'medico-atualizar',
-    loadChildren: () => import('./medico-atualizar/medico-atualizar.module').then( m => m.MedicoAtualizarPageModule)
-  },
-  {
-    path: 'perfil',
-    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
-  },
-  {
-    path: 'perfil-visualizar',
-    loadChildren: () => import('./perfil-visualizar/perfil-visualizar.module').then( m => m.PerfilVisualizarPageModule)
-  },
-  {
     path: 'medico-cliente',
     loadChildren: () => import('./medico-cliente/medico-cliente.module').then( m => m.MedicoClientePageModule)
-  },
-  {
-    path: 'direcionar-consulta',
-    loadChildren: () => import('./direcionar-consulta/direcionar-consulta.module').then( m => m.DirecionarConsultaPageModule)
   },
   {
     path: 'medico-exames',
