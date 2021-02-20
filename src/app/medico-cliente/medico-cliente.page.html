@@ -34,7 +34,6 @@
               <ion-list style="margin-top: 2em;">
                 <ion-item *ngFor="let medico of lista">
                   <ion-label>{{medico.nome}}</ion-label>
-                  <ion-button color="dark" (click)="visualizar(medico)" shape="round">Ver</ion-button>
                   <ion-button color="dark" (click)="agendar(medico.id)" shape="round">Agendar</ion-button>
                 </ion-item>
               </ion-list>
